@@ -2,10 +2,74 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Home</title>
 </head>
 <body>
-    <h1>Landing Page</h1>
+    <nav>
+    <ul class="sidebar">
+        <li onclick=hideSidebar()><a href="#"><img src="images/close_icon.png" id="close_icon"></a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Photos</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="about.html">About</a></li>
+    </ul>
+
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="hideOnMobile"><a href="#">Blog</a></li>
+        <li class="hideOnMobile"><a href="#">Photos</a></li>
+        <li class="hideOnMobile"><a href="#">Projects</a></li>
+        <li class="hideOnMobile"><a href="about.html">About</a></li>
+        <li onclick=showSidebar()><a href="#"><img src="images/menu.jpg" id="menu_icon"></a></li>
+    </ul>
+    </nav>
+
+    <div class="hero">
+        <h1>welcome</h1>
+
+    </div>
+
+    <div class="mainContainer">
+
+            <div class="contentBar">
+                <h1>Welcome to My site</h1><br/>
+                <a href="https://github.com/kidd1492" target="blank">GitHub Profile</a><br/><br/>
+                <h3>Current Projects</h3><br/>
+
+            </div>
+
+            <div class="content">
+                <div class="contentBody">  
+                    <p>Welcome! I’m Chris, and this site is a testament to my self-guided exploration into the 
+                    fascinating worlds of coding and electronics. My journey has always been fueled by an 
+                    innate curiosity. <a href="about.html">Discover more about me</a><br/><br/>
+                    This platform is a canvas where I paint the story of my learning journey, sharing both the challenges and 
+                    victories I’ve encountered along the way. My hope is that by unveiling my work and the knowledge 
+                    I’ve gained throughout my coding journey, I can provide answers and insights that might assist 
+                    others on their own paths. </p><br/>
+
+                    
+                </div>
+            </div>
+    </div>
+    <footer>
+        <h3>this is the footer</h3>
+    </footer>
+<script>
+    function showSidebar(){
+        const sidebar = document.querySelector('.sidebar');
+        sidebar.style.display = 'flex';
+    }
+
+    function hideSidebar(){
+        const sidebar = document.querySelector('.sidebar');
+        sidebar.style.display = 'none';
+    }
+
+</script>
+
 </body>
 </html>
