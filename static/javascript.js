@@ -780,7 +780,69 @@ box.addEventListener('mouseout', function(event){
                 titleEx.innerHTML = "while Loops"
                 textContainer.innerHTML = texteventListener;
                 scriptContainer.innerHTML = codeExeventListener ;
-                break;  
+                break;
+                
+            case 'json':
+                const textJson = `
+                <h3>What is JSON?</h3>
+                <ul>
+                    <li>JSON is a lightweight data interchange format.</li>
+                    <li>It's text-based and easy to understand.</li>
+                    <li>JSON is often used for transmitting data between a server and a web page.</li>
+                    <li>The syntax of JSON is derived from JavaScript object notation, but it's text-only.</li>
+                </ul>
+            
+                <h3>JSON Syntax Rules:</h3>
+                <ul>
+                    <li>Data in JSON is organized as name/value pairs.</li>
+                    <li>Pairs are separated by commas.</li>
+                    <li>Objects (similar to JavaScript objects) are enclosed in curly braces {}.</li>
+                    <li>Arrays (similar to JavaScript arrays) are enclosed in square brackets [].</li>
+                </ul>
+            
+                <h3>Example of JSON:</h3>
+                <p>Here’s an example of a simple JSON object representing employee records:</p>
+                <pre>
+                    <code>
+            {
+                "employees": [
+                { "firstName": "John", "lastName": "Doe" },
+                { "firstName": "Anna", "lastName": "Smith" },
+                { "firstName": "Peter", "lastName": "Jones" }
+                ]
+            }
+                    </code>
+                </pre>
+                <p>In this example, the <code>employees</code> object contains an array of three employee records.</p>
+            
+                <h3>Converting JSON to JavaScript Objects:</h3>
+                <p>JSON data can be easily converted into native JavaScript objects.</p>
+                <pre>
+                    <code>
+            const jsonString = '{ "employees": [ ... ] }';
+            const jsonObject = JSON.parse(jsonString);
+                    </code>
+                </pre>
+            
+                <h3>Using JSON in Web Applications:</h3>
+                <p>Common use cases include fetching data from a server (e.g., via an API) and displaying it on a web page.</p>
+                <p>You can also create JSON data dynamically in your JavaScript code.</p>
+            
+                <h3>Remember:</h3>
+                <ul>
+                    <li>JSON names (keys) must be enclosed in double quotes (" "), unlike JavaScript object keys.</li>
+                    <li>JSON is language-independent; you can work with it in any programming language.</li>
+                </ul>
+            
+                <p>JSON simplifies data exchange and is widely supported across different platforms and languages. It’s an essential part of modern web development! 😊</p>
+                `;
+
+                const codeExJson = `page section`;
+
+                titleEx.innerHTML = "Json"
+                textContainer.innerHTML = textJson;
+                scriptContainer.innerHTML = codeExJson;
+                break;
     }
 }
 
