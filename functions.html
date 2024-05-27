@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="veiwport" content="width=device-qwidth, initial-scale=1.0">
+        <title>Learn JavaScript</title>
+        <link rel="stylesheet" href="notes.css">
+    </head>
+    
+    <div>
+        <div class="mainTitle">
+        <h1>Functions</h1></div><br/><br/>
+        <a href="index.html"><button>Back</button></a> 
+    </div>   
+
+<body>
+               
+<div class="textContainer">
+<h3>This function prints Hello</h3>
+
+<pre>
+function printHello(){
+    functions.innerHTML = "Hello";
+};</pre>
+<button type="button" onclick="printHello()">Print Hello</button>
+
+<h1 id="functions"></h1></div>
+
+<div class="textContainer">
+    <p>An anonymous function is created without an identifier (name).
+    It’s defined using the function keyword followed by parentheses () and curly braces {}.
+    Assign them to variables or use them directly.
+    Anonymous functions help encapsulate code and prevent polluting the global scope.</p>
+    
+<h3>This function also prints Hello</h3>
+
+<pre>
+const hello = function(){
+    function2.innerHTML = "This function also print Hello"
+}</pre>
+<button type="button" onclick="hello()">Print Hello</button>
+<h1 id="function2"></h1></div>
+
+<div class="textContainer">
+    <p>Arrow functions provide a concise syntax for defining functions.
+        They don't have their own 'this' context.
+        If your function body consists of a single expression (like in the example), you can omit the curly braces {}.
+        However, if you want to include multiple statements or need to perform additional logic, use the curly braces.
+        function2.innerHTML = "This function also print Hello"</p>
+<h3>This function also prints Hello</h3>
+
+<pre>const hello = () => function2.innerHTML = "This function also print Hello"</pre>
+<button type="button" onclick="helloAgain()">Print Hello</button>
+<h1 id="function3"></h1></div>
+           
+        
+
+        <script>
+            let functions = document.getElementById('functions');
+            let function2 = document.getElementById('function2');
+            let function3 = document.getElementById('function3');
+
+            function printHello(){
+                functions.innerHTML = "Hello";
+            };
+
+            const hello = function(){
+                function2.innerHTML = "This function also print Hello"
+            };
+
+            const helloAgain = () => function3.innerHTML = "This function also print Hello"
+        </script>
+
+</body>
+</html>
