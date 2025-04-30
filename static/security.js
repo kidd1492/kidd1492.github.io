@@ -1,40 +1,50 @@
-const flashcards = [
-    { acronym: 'AAA', definition: 'Authentication Authorization Accounting', ex: 'Ensures secure access control by verifying identity, granting permissions, and tracking user activity.' },
-    { acronym: 'VPN', definition: 'Virtual Private Network', ex: 'Creates a secure, encrypted connection over the internet to protect data from unauthorized access.' },
-    { acronym: 'AUP', definition: 'Acceptable Use Policy', ex: 'Defines rules for using an organization’s network and resources.' },
-    { acronym: 'CIA', definition: 'Confidentiality Integrity Avalability', ex: 'Confidentiality- encryption, access controls, two factor authentication, Integrity- Hashing, digital signatures, certificates, Availability- redundancy fault tolerance, patching' },
-    { acronym: 'IPS', definition: 'Intrusion Prevention System', ex: 'Blocks malicious traffic and prevents unauthorized access.' },
-    { acronym: 'MFA', definition: 'Multi-Factor Authentication', ex: 'Authentication method requiring multiple verification factors.' },
-    { acronym: 'IDS', definition: 'Intrusion Detection System', ex: 'Monitors network traffic for suspicious activity and alerts administrators to potential threats.' },
-    { acronym: 'SIEM', definition: 'Security Information and Event Management', ex: 'A solution that aggregates and analyzes security data to detect and respond to threats.' },
-    { acronym: 'IRP', definition: 'Incident Response Plan', ex: ' A documented strategy outlining the steps organizations take to detect, respond to, and recover from security incidents or breaches.' },
-    { acronym: 'PKI', definition: 'Public Key Infrastructure', ex: 'Framework for managing digital certificates and encryption keys.' },
-    { acronym: 'CA', definition: 'Certificate Authority', ex: 'Entity that issues digital certificates for secure communications.' },
-    { acronym: 'CSR', definition: 'Certificate Signing Request', ex: 'Request sent to a CA for a digital certificate.' },
-    { acronym: 'MIME', definition: 'Multipurpose Internet Mail Extensions', ex: ' expands email capabilities beyond plain text, allowing the inclusion of attachments like graphics, audio, and video' },
-    { acronym: 'PKI', definition: 'Public Key Infrastructure', ex: 'A framework for managing digital certificates and encryption keys to secure communications.' },
-    { acronym: 'SOC', definition: 'Security Operations Center', ex: 'A centralized team responsible for monitoring and responding to cybersecurity incidents.' },
-    { acronym: 'IPS', definition: 'Intrusion Prevention System', ex: 'Actively blocks malicious traffic and prevents unauthorized access to a network.' },
-    { acronym: 'VPN', definition: 'Virtual Private Network', ex: 'Creates a secure, encrypted connection over the internet to protect data from unauthorized access.' },
-    { acronym: 'SIEM', definition: 'Security Information and Event Management', ex: 'Aggregates and analyzes security data to detect and respond to threats in real time.' },
-    { acronym: 'SSH', definition: 'Secure Shell', ex: 'A cryptographic network protocol for secure remote login and command execution.' },
-    { acronym: 'SSL', definition: 'Secure Sockets Layer', ex: 'A cryptographic protocol designed to provide secure communication over a computer network.' },
-    { acronym: 'ACL', definition: 'Access Control List', ex: 'Defines rules that specify which users or systems are granted or denied access to a particular resource.' },
-    { acronym: 'AES', definition: 'Advanced Encryption Standard', ex: 'A widely used encryption algorithm that ensures secure data transmission and storage.' },
-    { acronym: 'APT', definition: 'Advanced Persistent Threat', ex: 'A prolonged cyberattack where attackers maintain access to a network.' },
-    { acronym: 'TKIP', definition: 'Temporal Key Integrity Protocol', ex: 'A security protocol used in wireless networks to enhance encryption.' },
-    { acronym: 'BYOD', definition: 'Bring Your Own Device', ex: 'Policy allowing employees to use personal devices for work.' },
-    { acronym: 'BIOS', definition: 'Basic Input/Output System', ex: 'Firmware that initializes hardware during boot-up.' },
-    { acronym: 'CCTV', definition: 'Closed-Circuit Television', ex: 'Surveillance system used for monitoring security.' },
-    { acronym: 'DLP', definition: 'Data Loss Prevention', ex: 'Security measure that prevents unauthorized data transfers.' },
-    { acronym: 'FDE', definition: 'Full Disk Encryption', ex: 'Security measure that encrypts an entire disk.' },
-    { acronym: 'DNS', definition: 'Domain Name System', ex: 'Translates domain names into IP addresses.' },
-    { acronym: 'ESP', definition: 'Encapsulating Security Payload', ex: 'IPsec protocol that provides encryption and authentication.' },
-    { acronym: 'FTP', definition: 'File Transfer Protocol', ex: 'Protocol used for transferring files over a network.' },
-    { acronym: 'HTTPS', definition: 'Hypertext Transfer Protocol Secure', ex: 'Secure version of HTTP using encryption.' },
-    { acronym: 'VLAN', definition: 'Virtual Local Area Network', ex: 'A network segmentation technique that improves security and efficiency.' },
+const levels = [
+    {
+        name: "Level 1 - General Concepts",
+        flashcards: [
+            { acronym: 'AAA', definition: 'Authentication Authorization Accounting', ex: 'Ensures secure access control by verifying identity, granting permissions, and tracking user activity.' },
+            { acronym: 'SOC', definition: 'Security Operations Center', ex: 'A centralized team responsible for monitoring and responding to cybersecurity incidents.' },
+            { acronym: 'VPN', definition: 'Virtual Private Network', ex: 'Creates a secure, encrypted connection over the internet to protect data from unauthorized access.' },
+            { acronym: 'SSH', definition: 'Secure Shell', ex: 'A cryptographic network protocol for secure remote login and command execution.' },
+            { acronym: 'MFA', definition: 'Multi-Factor Authentication', ex: 'Authentication method requiring multiple verification factors.' },
+            { acronym: 'AUP', definition: 'Acceptable Use Policy', ex: 'Defines rules for using an organization’s network and resources.' },
+            { acronym: 'CIA', definition: 'Confidentiality Integrity Availability', ex: 'Confidentiality- encryption, access controls, two-factor authentication. Integrity- Hashing, digital signatures, certificates. Availability- redundancy, fault tolerance, patching.' },
+            { acronym: 'IRP', definition: 'Incident Response Plan', ex: 'A documented strategy outlining the steps organizations take to detect, respond to, and recover from security incidents or breaches.' },
+            { acronym: 'BYOD', definition: 'Bring Your Own Device', ex: 'Policy allowing employees to use personal devices for work.' },
+            { acronym: 'BIOS', definition: 'Basic Input/Output System', ex: 'Firmware that initializes hardware during boot-up.' }
+        ]
+    },
+    {
+        name: "Level 2 - Security Infrastructure & Monitoring",
+        flashcards: [
+            { acronym: 'IPS', definition: 'Intrusion Prevention System', ex: 'Blocks malicious traffic and prevents unauthorized access.' },
+            { acronym: 'IDS', definition: 'Intrusion Detection System', ex: 'Monitors network traffic for suspicious activity and alerts administrators to potential threats.' },
+            { acronym: 'SIEM', definition: 'Security Information and Event Management', ex: 'A solution that aggregates and analyzes security data to detect and respond to threats.' },
+            { acronym: 'ACL', definition: 'Access Control List', ex: 'Defines rules that specify which users or systems are granted or denied access to a particular resource.' },
+            { acronym: 'APT', definition: 'Advanced Persistent Threat', ex: 'A prolonged cyberattack where attackers maintain access to a network.' },
+            { acronym: 'CCTV', definition: 'Closed-Circuit Television', ex: 'Surveillance system used for monitoring security.' },
+            { acronym: 'DLP', definition: 'Data Loss Prevention', ex: 'Security measure that prevents unauthorized data transfers.' },
+            { acronym: 'FDE', definition: 'Full Disk Encryption', ex: 'Security measure that encrypts an entire disk.' },
+            { acronym: 'PKI', definition: 'Public Key Infrastructure', ex: 'A framework for managing digital certificates and encryption keys to secure communications.' },
+            { acronym: 'CA', definition: 'Certificate Authority', ex: 'Entity that issues digital certificates for secure communications.' }
+        ]
+    },
+    {
+        name: "Level 3 - Encryption & Networking",
+        flashcards: [
+            { acronym: 'AES', definition: 'Advanced Encryption Standard', ex: 'A widely used encryption algorithm that ensures secure data transmission and storage.' },
+            { acronym: 'RSA', definition: 'Rivest-Shamir-Adleman', ex: 'A public-key cryptosystem used for secure data transmission.' },
+            { acronym: 'TKIP', definition: 'Temporal Key Integrity Protocol', ex: 'A security protocol used in wireless networks to enhance encryption.' },
+            { acronym: 'DNS', definition: 'Domain Name System', ex: 'Translates domain names into IP addresses.' },
+            { acronym: 'ESP', definition: 'Encapsulating Security Payload', ex: 'IPsec protocol that provides encryption and authentication.' },
+            { acronym: 'FTP', definition: 'File Transfer Protocol', ex: 'Protocol used for transferring files over a network.' },
+            { acronym: 'HTTPS', definition: 'Hypertext Transfer Protocol Secure', ex: 'Secure version of HTTP using encryption.' },
+            { acronym: 'SSL', definition: 'Secure Sockets Layer', ex: 'A cryptographic protocol designed to provide secure communication over a computer network.' },
+            { acronym: 'CSR', definition: 'Certificate Signing Request', ex: 'Request sent to a CA for a digital certificate.' },
+            { acronym: 'VLAN', definition: 'Virtual Local Area Network', ex: 'A network segmentation technique that improves security and efficiency.' }
+        ]
+    }
 ];
-
 
     
 
@@ -90,13 +100,17 @@ const others = [
     // Add more flashcards here
 ];
 
+let currentLevelIndex = 0; // Start at Level 1
 let currentFlashcard = {};
 let correct = 0;
 let incorrect = 0;
 
 function selectFlashcard() {
+    const level = levels[currentLevelIndex]; // Get the current level's flashcards
+    const flashcards = level.flashcards;
     currentFlashcard = flashcards[Math.floor(Math.random() * flashcards.length)];
     document.getElementById('flashcard').textContent = currentFlashcard.acronym;
+    document.getElementById('levelDisplay').textContent = level.name; // Show current level
 }
 
 function checkAnswer() {
@@ -109,26 +123,46 @@ function checkAnswer() {
 
     if (userResponse.toLowerCase() === currentFlashcard.definition.toLowerCase()) {
         correct += 1;
-        correct_box.textContent = `${correct}`;
         feedback.textContent = "Correct!";
-        def.textContent = `${currentFlashcard.definition}`;
-        ex.textContent = `${currentFlashcard.ex}`;
     } else {
         incorrect += 1;
-        incorrect_box.textContent = `${incorrect}`;
-        feedback.textContent = `Incorrect! ${incorrect}`;
-        def.textContent = `${currentFlashcard.definition}`;
-        ex.textContent = `${currentFlashcard.ex}`;
+        feedback.textContent = `Incorrect!`;
     }
-    // Reset for next round
+
+    correct_box.textContent = `${correct}`;
+    incorrect_box.textContent = `${incorrect}`;
+    def.textContent = `${currentFlashcard.definition}`;
+    ex.textContent = `${currentFlashcard.ex}`;
+
+    checkLevelProgress();
+
     setTimeout(() => {
         feedback.textContent = '';
         def.textContent = '';
         ex.textContent = '';
         document.getElementById('userInput').value = '';
         selectFlashcard();
-    }, 8000);
+    }, 4000);
 }
 
-// Initialize
+function checkLevelProgress() {
+    const totalAttempts = correct + incorrect;
+    
+    // Check progress every 10 attempts
+    if (totalAttempts % 10 === 0) {
+        const accuracy = (correct / totalAttempts) * 100;
+
+        if (accuracy >= 90 && currentLevelIndex < levels.length - 1) {
+            currentLevelIndex++; // Move to the next level
+            correct = 0; 
+            incorrect = 0; 
+            alert(`Congratulations! You've unlocked ${levels[currentLevelIndex].name}`);
+            selectFlashcard(); // Load new level
+        } else if (currentLevelIndex === levels.length - 1) {
+            alert("You've completed all levels!");
+        }
+    }
+}
+
+// Initialize game
 selectFlashcard();

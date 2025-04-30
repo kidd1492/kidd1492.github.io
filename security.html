@@ -4,33 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="static/security_style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="static/notes.css">
     <title>Flashcard Quiz</title>
 </head>
 <body>
-    <div class="container">
-        <div class="label">
-            <div>Correct</div>
-            <div>Incorrect</div>
+    <div class="content">
+        <div class="titleContainer">
+            <div class="mainTitle">
+                <h1 id="titleEx">Welcome to the Reference Hub!</h1>
+            </div>
         </div>
 
-        <div id="scorebox" class="scorebox">
-            <div id="correct" class=correct>0</div>
-            <div id="incorrect" class=incorrect>0</div>
+        <div class="topicBar">
+            <a href="index.html">Home</a>
+            <a href="python.html">Python</a>
+            <a href="notes.html">JavaScript</a>
+            <a href="security.html">Securicy+</a>
+            <a href="#">Flask</a>
+            <a href="#">Django</a>
         </div>
 
-        <div id="flashcard" class="flashcard"></div>
-        <input type="text" id="userInput" placeholder="Type your answer here">
+        <div id="textContainer" class="textContainer">
 
-        <div>
-            <button onclick="checkAnswer()">Submit</button>
-            <button onclick="checkAnswer()">Get Score</button>
+        <div class="container">
+            <div class="label">
+                <div>Correct</div>
+                <div>Incorrect</div>
+            </div>
+
+            <div id="scorebox" class="scorebox">
+                <div id="correct" class=correct>0</div>
+                <div id="incorrect" class=incorrect>0</div>
+            </div>
+
+            <div id="flashcard" class="flashcard"></div>
+            <input type="text" id="userInput" placeholder="Type your answer here">
+
+            <div>
+                <button onclick="checkAnswer()">Submit</button>
+                <button onclick="checkAnswer()">Get Score</button>
+            </div>
+
+            <div id="feedback" class="feedback"></div>
+            <div id="def" class="def"></div>
+            <div id="ex" class="ex"></div>
+
         </div>
-
-        <div id="feedback" class="feedback"></div>
-        <div id="def" class="def"></div>
-        <div id="ex" class="ex"></div>
-
     </div>
+    <footer>
+        <h3>Human Side of Tech</h3>
+    </footer>
+    
     <script src="static/security.js"></script>
 </body>
 </html>
