@@ -36,8 +36,9 @@ body {
 
 /* Navigation Bar */
 nav {
-    margin-top: 15px;
-    background-color: rgb(1, 3, 20);
+    width: 100%;
+    margin-top: 0;
+    background-color: rgb(238, 238, 243);
 }
 
 nav ul {
@@ -71,36 +72,6 @@ nav li:first-child {
     margin-right: auto;
 }
 
-/* Sidebar */
-.sidebar {
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100%;
-    width: 250px;
-    z-index: 999;
-    background-color: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
-    display: none;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-}
-
-.sidebar li {
-    width: 100%;
-}
-
-.sidebar a {
-    width: 100%;
-}
-
-/* Icons */
-#menu_icon, #close_icon {
-    width: 30px;
-    height: 30px;
-}
 
 /* Main Layout */
 .mainContainer {
@@ -215,20 +186,4 @@ tr:hover {
 }
 
 /* Responsive Design */
-@media (max-width: 600px) {
-    .hideOnMobile {
-        display: none;
-    }
-    .contentBar {
-        display: none;
-    }
-    .content {
-        width: 100%;
-    }
-}
-
-@media (max-width: 400px) {
-    .sidebar {
-        width: 100%;
-    }
-}
+@media (max-width: 600px){}
