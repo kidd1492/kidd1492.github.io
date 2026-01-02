@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>2-Feature Linear Regression Demo</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles/style.css" />
+  <!-- Plotly for 3D scatter and plane -->
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+</head>
+<body>
+  <div class="menu">
+    <a href="python.html">Python</a>
+    <a href="regression_mse.html">Regression</a>
+    <a href="multi_feature.html">Multi Feature Regression</a>
+  </div>
+  <div class="container">
+
+    <h1>2-Feature Linear Regression</h1>
+    <div class="grid">
+      <div class="panel">
+        <div class="controls">
+          <div>
+            <label>X1 values (comma separated)</label>
+            <input id="x1Input" type="text" value="1,2,3,4,5" />
+          </div>
+          <div>
+            <label>X2 values (comma separated)</label>
+            <input id="x2Input" type="text" value="2,1,3,2,4" />
+          </div>
+          <div>
+            <label>Y values (comma separated)</label>
+            <input id="yInput" type="text" value="3,3,6,5,9" />
+          </div>
+
+          <div class="row">
+            <button id="plotBtn">Plot</button>
+            <button id="randomBtn" class="btn-green">Randomize</button>
+            <button id="resetBtn" class="btn-red">Reset</button>
+          </div>
+
+          <div>
+            <label>Weight w1</label>
+            <div class="row">
+              <input id="w1Range" class="slider" type="range" min="-5" max="5" step="0.01" value="1" />
+              <input id="w1Num" type="number" step="0.01" value="1" />
+            </div>
+          </div>
+
+          <div>
+            <label>Weight w2</label>
+            <div class="row">
+              <input id="w2Range" class="slider" type="range" min="-5" max="5" step="0.01" value="1" />
+              <input id="w2Num" type="number" step="0.01" value="1" />
+            </div>
+          </div>
+
+          <div>
+            <label>Bias b</label>
+            <div class="row">
+              <input id="bRange" class="slider" type="range" min="-20" max="20" step="0.1" value="0" />
+              <input id="bNum" type="number" step="0.1" value="0" />
+            </div>
+          </div>
+
+          <div class="row">
+            <button id="fitBtn" class="btn-blue">Fit (Least Squares)</button>
+            <button id="stopAnimBtn" class="btn-gray">Stop</button>
+          </div>
+
+          <div class="info">
+            <div class="small">Click a row in the table below to inspect dot product and prediction.</div>
+            <div class="stat"><div class="muted">Selected (x1, x2)</div><div id="selX">—</div></div>
+            <div class="stat"><div class="muted">Actual y</div><div id="selY">—</div></div>
+            <div class="stat"><div class="muted">Predicted y = w₁x₁ + w₂x₂ + b</div><div id="predY">—</div></div>
+            <div class="stat"><div class="muted">Dot product w·x</div><div id="dotProd">—</div></div>
+            <div class="stat"><div class="muted">Residual (actual − pred)</div><div id="residual">—</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div id="plot3d" class="plot3d"></div>
+      </div>
+    </div>
+
+    <div class="panel panel-table">
+      <h2>Data and predictions</h2>
+      <table id="dataTable">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>x1</th>
+            <th>x2</th>
+            <th>y</th>
+            <th>ŷ</th>
+            <th>Residual</th>
+          </tr>
+        </thead>
+        <tbody id="dataBody"></tbody>
+      </table>
+    </div>
+
+    <div class="footer">
+      Model: y = w₁x₁ + w₂x₂ + b. The plane and dots update as you adjust weights and bias or use the Fit button.
+    </div>
+  </div>
+
+  <script src="scripts/multi_f_regressions.js"></script>
+</body>
+</html>

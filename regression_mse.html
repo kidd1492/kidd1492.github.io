@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Linear Regression Interactive Demo — Fit Animation</title>
+  <link rel="stylesheet" href="styles/style.css" />
+  <!-- Plotly for 3D scatter and plane -->
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+</head>
+
+<body>
+    <div class="menu">
+      <a href="python.html">Python</a>
+      <a href="regression_mse.html">Regression</a>
+      <a href="multi_feature.html">Multi Feature Regression</a>
+    </div>
+    <div class="container">
+
+
+    <h1>Linear Regression Interactive Demo</h1>
+    <div class="grid">
+      <div class="panel">
+        <div class="controls">
+          <div>
+            <label>X values comma separated</label>
+            <input id="xInput" type="text" placeholder="e.g. 1,2,3,4,5" value="1,2,3,4,5" />
+          </div>
+          <div>
+            <label>Y values comma separated</label>
+            <input id="yInput" type="text" placeholder="e.g. 2,4,6,8,10" value="2,4,6,8,10" />
+          </div>
+          <div class="row">
+            <button id="plotBtn">Plot</button>
+            <button id="randomBtn" style="background:var(--green)">Randomize</button>
+            <button id="resetBtn" style="background:var(--red)">Reset</button>
+          </div>
+
+          <div>
+            <label>Weight</label>
+            <div class="row">
+              <input id="weightRange" class="slider" type="range" min="-5" max="5" step="0.01" value="1" />
+              <input id="weightNum" type="number" step="0.01" value="1" style="width:90px" />
+            </div>
+          </div>
+
+          <div>
+            <label>Bias</label>
+            <div class="row">
+              <input id="biasRange" class="slider" type="range" min="-20" max="20" step="0.1" value="0" />
+              <input id="biasNum" type="number" step="0.1" value="0" style="width:90px" />
+            </div>
+          </div>
+
+          <div class="row" style="gap:10px">
+            <button id="fitBtn" style="background:#60a5fa">Fit (Least Squares)</button>
+            <button id="stopAnimBtn" style="background:#94a3b8">Stop</button>
+          </div>
+
+          <div class="info">
+            <div class="small">Click a point on the canvas to inspect the mapping and dot product.</div>
+            <div class="stat"><div class="muted">Selected X</div><div id="selX">—</div></div>
+            <div class="stat"><div class="muted">Actual Y</div><div id="selY">—</div></div>
+            <div class="stat"><div class="muted">Predicted y = w·x + b</div><div id="predY">—</div></div>
+            <div class="stat"><div class="muted">Dot product w·x</div><div id="dotProd">—</div></div>
+            <div class="stat"><div class="muted">Rise</div><div id="rise">—</div></div>
+            <div class="stat"><div class="muted">Run</div><div id="run">—</div></div>
+          </div>
+
+          <div class="legend">
+            <div class="item"><span class="swatch line"></span> Model line</div>
+            <div class="item"><span class="swatch point"></span> Data points</div>
+            <div class="item"><span class="swatch pred"></span> Predicted points</div>
+            <div class="item"><span class="swatch vec"></span> Transformation vector</div>
+          </div>
+
+          <div class="footer">This demo shows the linear map \(x \mapsto w\cdot x + b\). The Fit button computes the ordinary least-squares solution and animates the model to it.</div>
+        </div>
+      </div>
+
+      <div class="panel" style="padding:12px">
+        <canvas id="plot" width="800" height="600"></canvas>
+      </div>
+    </div>
+  </div>
+  <script src="scripts/regression_mse.js"></script>
+</body>
+</html>
