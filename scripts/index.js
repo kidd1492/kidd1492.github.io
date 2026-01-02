@@ -71,6 +71,6 @@ function showImage(example) {
 
         default:
             titleEx.innerHTML = "Welcome!";
-            exampleImage.src = "6.png";
+            exampleImage.src = "images/13.png";
     }
 }
