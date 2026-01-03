@@ -1,17 +1,20 @@
 const titleEx = document.getElementById('titleEx');
+const textContainer = document.getElementById('textContainer');
 const exampleImage = document.getElementById('exampleImage');
 
 function showImage(example) {
     switch(example) {
 
         case 'core':
-            titleEx.innerHTML = "Core";
+            titleEx.innerHTML = `Hello Welcome`;
             exampleImage.src = "images/1_core.png";
+            textContainer.innerText =   "This is the new text";
             break;
 
         case '2':
             titleEx.innerHTML = "2";
             exampleImage.src = "images/2.png";
+            textContainer.innerHTML =   `<p>This is the new text sample 2</p>`;
             break;
 
         case '3':
@@ -71,6 +74,6 @@ function showImage(example) {
 
         default:
             titleEx.innerHTML = "Welcome!";
-            exampleImage.src = "images/13.png";
+            exampleImage.src = "images/1_core.png";
     }
 }
