@@ -75,6 +75,16 @@ button:hover{
 .menu a:hover {
   text-decoration: underline;
 }
+
+.container{
+  max-width:1150px;
+  margin:24px auto;
+  padding:20px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:12px;
+  box-shadow:0 6px 30px rgba(2,6,23,0.6);
+}
+
 .content{
     padding: 5px;
 }
