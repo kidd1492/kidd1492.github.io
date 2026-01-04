@@ -18,23 +18,20 @@
     <div class="topics">
         <h2>Topics</h2>
         <button><a href="learning_hub.html">Learning Hub Home</button></a>
-        <button onclick="showImage('core')">Core</button>
-        <button onclick="showImage('2')">Linear Regression</button>
-        <button onclick="showImage('3')">Gradient Desent</button>
-        <button onclick="showImage('4')">Predicting Probabilities</button>
-        <button onclick="showImage('5')">Logistic Regression</button>
-        <button onclick="showImage('6')">6</button>
+        <button><a href="NN_intro.html">Neural Networks</button></a>
+        <button onclick="showImage('layers')">Layers</button>
+        <button onclick="showImage('neuron')">Neuron</button>
+        <button onclick="showImage('activation')">Predicting Probabilities</button>
+        <button onclick="showImage('LinearUnit')">Linear Unit</button>
+        <button onclick="showImage('one_input')">y = mx + b</button>
         <button onclick="showImage('7')">7</button>
-        <button onclick="showImage('8')">8</button>
-        <button onclick="showImage('9')">9</button>
-        <button onclick="showImage('10')">10</button>
-        <button onclick="showImage('11')">11</button>
-        <button onclick="showImage('12')">Full Cycle</button>
-        <button onclick="showImage('13')">13</button>
-
     </div>
 
     <div class="content">
+
+        <div id="imageContainer" class="textContainer">
+            <img id="exampleImage" src="images/comple_nn.png" style="max-width:100%; border-radius:10px;">
+        </div>
 
         <div id="textContainer" class="textContainer">
             <h2>Focused, First‑Principles Framing</h2><br/>
@@ -47,9 +44,7 @@
             What appears complicated is really just these elementary pieces repeated and composed at scale.</p>
         </div>
 
-        <div id="imageContainer" class="textContainer">
-            <img id="exampleImage" src="images/comple_nn.png" style="max-width:100%; border-radius:10px;">
-        </div>
+        
     </div>
 
     <script src="scripts/learning_hub.js"></script>
