@@ -6,7 +6,7 @@ function showImage(example) {
 
         case 'core':
             exampleImage.src = "images/1_core.png";
-            textContainer.innerText =   "This is the new text";
+            textContainer.innerHTML = `This is the new text`;
             break;
 
         case '2':
@@ -59,6 +59,6 @@ function showImage(example) {
             break;
 
         default:
-            exampleImage.src = "images/1_core.png";
+            exampleImage.src = "complte_nn.png";
     }
 }
