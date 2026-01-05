@@ -1,36 +1,37 @@
 <!DOCTYPE html>
 <html lang="eng">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reference Hub</title>
-    <link rel="stylesheet" href="styles/python.css">
-</head>
-<body>
-
+    <head>
+        <meta charset="UTF-8">
+        <meta name="veiwport" content="width=device-qwidth, initial-scale=1.0">
+        <title>Learn JavaScript</title>
+        <link rel="stylesheet" href="styles/python.css">
+    </head>
+    <body>
     <div class="menu">
         <a href="index.html">Home</a>
-        <a href="python.html">Python</a>
-        <a href="regression_mse.html">Regression</a>
-        <a href="multi_feature.html">Multi Feature Regression</a>
+        <a href="learning_hub.html">Leaning Hub</a>
+        <a href="https://humansideoftek.blogspot.com/">Blog</a>
     </div>
+
     <div class="container">
         <div class="topics">
-            <h2>Topics</h2>
+
             <button><a href="learning_hub.html">Learning Hub Home</button></a>
-            <button><a href="NN_intro.html">Neural Networks</button></a>
-            <button onclick="showImage('layers')">Layers</button>
-            <button onclick="showImage('neuron')">Neuron</button>
-            <button onclick="showImage('activation')">Predicting Probabilities</button>
-            <button onclick="showImage('LinearUnit')">Linear Unit</button>
-            <button onclick="showImage('one_input')">y = mx + b</button>
-            <button onclick="showImage('7')">7</button>
+            <button onclick="showImage('nn')">Neural Networks</button>
+            <button><a href="python.html">Python</a></button>
+            <button onclick="showImage('neuron')">Javascript</button>
+            <button onclick="showImage('activation')">Tools</button>
         </div>
 
         <div class="content">
+            <div class="titleContainer">
+                <div class="mainTitle">
+                    <h1 id="titleEx">Welcome to the Learning Hub!</h1>
+                </div>
+            </div>
 
             <div id="imageContainer" class="textContainer">
-                <img id="exampleImage" src="images/comple_nn.png" style="max-width:100%; border-radius:10px;">
+                <h2>Focused, First‑Principles Framing</h2><br/>
             </div>
 
             <div id="textContainer" class="textContainer">
@@ -43,10 +44,7 @@
                 from basic concepts like linear combinations, dot products, projections, and simple nonlinear functions. 
                 What appears complicated is really just these elementary pieces repeated and composed at scale.</p>
             </div>
-
-            
         </div>
-    </div>
     <script src="scripts/learning_hub.js"></script>
 </body>
 </html>
