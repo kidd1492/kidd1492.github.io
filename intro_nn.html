@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Neural Networks: A Beginner's Guide</title>
+    <link rel="stylesheet" href="styles/index..css">
+</head>
+
+<body>
+
+    <!-- MENU BAR -->
+    <div class="menu">
+        <a href="index.html">Home</a>
+        <a href="#">Page 2</a>
+        <a href="#">Page 3</a>
+    </div>
+
+    <div class="container">
+        <div class="content">
+
+            <h1>Neural Networks: A Beginner's Guide</h1>
+
+            <div class="contentBody">
+                <p>
+                    This outline teaches neural networks by starting with the simplest linear model,
+                    building up the math step by step (dot products, projections, activations, gradients),
+                    and showing how stacking these basic units creates the full power of deep learning.
+                </p>
+
+                <p>
+                    This gives learners a complete, grounded understanding of neural networks from the bottom up.
+                </p>
+
+                <img src="images/image6.png" alt="Neural network diagram" style="width:100%; border-radius:10px; margin:20px 0;">
+
+                <h2>Focused, First‑Principles Framing</h2>
+
+                <p>
+                    For many learners, the term <em>neural network</em> evokes a sense of overwhelming complexity.
+                    But when you strip a neural network down to its first principles, a very different picture emerges.
+                    Beneath the surface, every operation reduces to simple mathematical and geometric ideas:
+                </p>
+
+                <blockquote style="margin:20px 0; font-style:italic; color:#9fb7d6;">
+                    “No matter what engineering field you’re in, you learn the same basic science and mathematics.
+                    And then maybe you learn a little bit about how to apply it.” — Noam Chomsky
+                </blockquote>
+
+                <h2>Neural Networks From First Principles</h2>
+
+                <h3>Start with the big idea</h3>
+
+                <p>Neural networks look complicated, but at their core they are built from:</p>
+
+                <ul>
+                    <li>linear combinations</li>
+                    <li>dot products</li>
+                    <li>projections</li>
+                    <li>simple nonlinear functions</li>
+                </ul>
+
+                <p>Everything else is just these pieces repeated at scale.</p>
+
+                <h3>1. Define the learning system</h3>
+
+                <p>
+                    A neural network is a learning system made of layers, and each layer is a collection of neurons
+                    that process the same inputs in parallel. The output of one layer becomes the input to the next.
+                </p>
+
+                <img src="images/image4.png" alt="Layer diagram" style="width:100%; border-radius:10px; margin:20px 0;">
+
+                <h3>2. The Neural Network is made of layers</h3>
+
+                <p>
+                    A layer is a <strong>collection of neurons</strong> that process the same inputs in parallel.
+                    The output of one layer becomes the input for the next layer.
+                </p>
+
+                <img src="images/image1.png" alt="Layer structure" style="width:100%; border-radius:10px; margin:20px 0;">
+
+                <h3>3. Zoom in: what is a neuron?</h3>
+
+                <p>A neuron is nothing more than:</p>
+
+                <ul>
+                    <li>A linear unit: <code>z = w · x + b</code></li>
+                    <li>Followed by an activation function</li>
+                </ul>
+
+                <ul>
+                    <li>linear regression → identity</li>
+                    <li>logistic regression → sigmoid</li>
+                    <li>neural networks → ReLU, tanh, sigmoid, etc.</li>
+                </ul>
+
+                <p>
+                    This linear‑plus‑activation structure is the core building block of every neural network.
+                </p>
+
+                <img src="images/image2.png" alt="Neuron diagram" style="width:100%; border-radius:10px; margin:20px 0;">
+                <img src="images/image3.png" alt="Neuron math" style="width:100%; border-radius:10px; margin:20px 0;">
+                <img src="images/image5.png" alt="Inputs through linear function" style="width:100%; border-radius:10px; margin:20px 0;">
+
+                <h3>4. One input</h3>
+
+                <p>Break the neuron down to its smallest form:</p>
+
+                <p><code>ŷ = w x + b</code></p>
+
+                <p>This is exactly simple linear regression.</p>
+
+                <p>This introduces:</p>
+
+                <ul>
+                    <li>prediction</li>
+                    <li>residuals</li>
+                    <li>loss (MSE)</li>
+                    <li>gradients</li>
+                    <li>gradient descent</li>
+                    <li>parameter updates</li>
+                </ul>
+
+                <p>
+                    This is the first complete “learning loop.”  
+                    Now we have the basic model in the learning system.  
+                    Next comes the objective (loss) and optimization — the way the model learns.
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        Neural Networks Guide — 2026
+    </footer>
+
+</body>
+</html>

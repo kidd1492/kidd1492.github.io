@@ -30,7 +30,8 @@ function showImage(example) {
             textContainer.innerHTML = `
 
 <h2>The Four Projects</h2><br/>
-
+<h3>What is a Neural Network?</h3>
+<p><a href="intro_nn.html">Into Neural Network Breakdown</a></p><br/>
 <h3>1. Single‑Feature Linear Regression — Cost vs. Size</h3><br/>
 <p>This project teaches the simplest possible learning system: fitting a straight line to data.  
     You learn how predictions are made using <i>y = mx + b</i>, how errors are measured with MSE, 

@@ -63,28 +63,6 @@ a:hover {
   box-shadow:0 6px 30px rgba(2,6,23,0.6);
 }
 
-/* Sidebar Content */
-.contentBar {
-    text-align: center;
-    font-size: 1.2rem;
-    box-shadow: 10px 10px 25px 12px rgb(82, 85, 85);
-    margin-top: 25px;
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.6);
-    color: rgba(0, 0, 0, 0.8);
-    height: 100vh;
-    width: 30%;
-}
-
-/* Hero Section */
-.hero {
-    display: flex;
-    width: 100%;
-    padding: 10px;
-    color: rgb(239, 238, 243);
-    height: 30vh;
-}
-
 /* Main Content */
 .content {
     margin-top: 5px;
@@ -103,27 +81,7 @@ a:hover {
     margin-bottom: 20px;
 }
 
-/* Card Container */
-.cardContainer {
-    display: flex;
-    gap: 15px 30px;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px;
-    background-color:#0f1724;
-}
 
-/* Card Body */
-.cardBody {
-    text-align: center;
-    padding: 10px;
-    display: grid;
-    border: 3px solid rgb(128, 128, 128);
-    border-radius: 10px 0px 10px 0px;
-    width: 325px;
-    height: 350px;
-    background-color:#0b1220;
-}
 
 /* Footer */
 footer {
@@ -137,35 +95,6 @@ footer {
     border-top: 3px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Table Styling */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 15px;
-    background-color: rgba(255, 255, 255, 0.9);
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-th, td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
-}
-
-th {
-    background-color: rgba(0, 2, 35, 0.8);
-    color: white;
-    font-weight: bold;
-}
-
-tr:nth-child(even) {
-    background-color: rgba(231, 226, 226, 0.7);
-}
-
-tr:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-    transition: 0.3s ease-in-out;
-}
 
 /* Responsive Design */
 @media (max-width: 600px){}
