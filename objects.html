@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="veiwport" content="width=device-qwidth, initial-scale=1.0">
+        <title>Python reference hub</title>
+        <link rel="stylesheet" href="styles/python.css">
+    </head>
+    <body>
+    <div class="menu">
+        <a href="index.html">Home</a>
+        <a href="learning_hub.html">Leaning Hub</a>
+        <a href="javascript.html">JavaScript</a>
+    </div>
+
+    <div class="container">
+            <div>
+                <div class="mainTitle">
+                    <h1>Objects</h1>
+                </div>
+                <br/><br/>
+                <a href="javascript.html"><button type="button">Back</button></a>
+            </div>
+
+            <div class="textContainer">
+                <h3>Hello, I am an Object</h3>
+                <p>I am an object that represents a person. I have properties (key-value pairs) such as:</p><br/>
+                <li>name: "Alice"</li>
+                <li>age: 30</li>
+
+                <pre>
+        const person = {
+            name: "Alice",
+            age: 30,
+            greet: function() {
+                console.log(`Hello, I'm ${this.name}!`);
+            }
+        };</pre>
+                <p>You can access my properties using dot notation:</p>
+                <button onclick="showName()">person.name</button>
+                <button onclick="showAge()">person.age</button>
+                <h2 id="dotName"></h2>
+                <h2 id="dotAge"></h2>
+            </div>
+
+            <div class="textContainer">
+                <h3>I can do stuff!!</h3>
+                <p>Like tell you my name:</p>
+                <button onclick="tellName()">person.greet</button>
+                <h2 id="dotGreet"></h2>
+            </div>
+
+            <div class="textContainer">
+                <h3>Constructor Function</h3>
+                <p>Constructor functions allow you to create custom objects (persons) with specific properties and behavior. Each object created using <code>new Person(...)</code> will have its own set of properties and methods. Constructors are commonly used in object-oriented programming to define blueprints for creating similar objects.</p>
+                <pre>
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+            this.greet = function() {
+                console.log(`Hello, I'm ${this.name}!`);
+            };
+        }
+        const person2 = new Person("John", 35);</pre>
+
+                <p>You can access <code>person2</code> using dot notation:</p>
+                <button onclick="p2Name()">person2.name</button>
+                <button onclick="p2Age()">person2.age</button>
+                <button onclick="p2Greet()">person2.greet</button>
+                <h2 id="p2Name"></h2>
+                <h2 id="p2Age"></h2>
+                <h2 id="p2Greet"></h2>
+                
+            </div>
+    </div>
+    <script>
+        const person = {
+            name: "Alice",
+            age: 30,
+            greet: function() {
+                return `Hello, I'm ${this.name}! I need a friend`;
+            }
+};
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+            this.greet = function() {
+                return `Hello, I'm ${this.name}!`;
+            };
+        }
+        const person2 = new Person("John", 35);
+
+        function showName() {
+            document.getElementById('dotName').innerHTML = person.name;
+        }
+
+        function showAge() {
+            document.getElementById('dotAge').innerHTML = person.age;
+        }
+
+        function tellName() {
+            let greeting = person.greet();
+            document.getElementById('dotGreet').innerHTML = greeting;
+        }
+        
+
+        function p2Name() {
+            document.getElementById('p2Name').innerHTML = person2.name;
+        }
+
+        function p2Age() {
+            document.getElementById('p2Age').innerHTML = person2.age;
+        }
+
+        function p2Greet() {
+            document.getElementById('p2Greet').innerHTML = person2.greet();
+        }
+
+    </script>
+</body>
+</html>

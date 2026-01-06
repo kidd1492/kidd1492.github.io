@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="veiwport" content="width=device-qwidth, initial-scale=1.0">
+        <title>Python reference hub</title>
+        <link rel="stylesheet" href="styles/python.css">
+    </head>
+    <body>
+    <div class="menu">
+        <a href="index.html">Home</a>
+        <a href="learning_hub.html">Leaning Hub</a>
+        <a href="javascript.html">JavaScript</a>
+    </div>
+
+    <div class="container">
+        <div>
+            <div class="mainTitle">
+                <h1 id="titleEx">Arrays</h1>
+            </div>
+            <br/><br/>
+            
+            <a href="javascript.html"><button type="button">Back</button></a>
+        </div>
+        <div class="textContainer">
+            <pre>let fruits = ["apple", "orange", "bannana", "coconut"];</pre>
+
+            <div class="buttonRow">
+                <button onclick="addElement()">Push an element</button>
+                <button onclick="removeElement()">Remove Element</button>
+                <button onclick="add0Index()">add [0] index</button>
+                <button onclick="remove0Index()">remove [0] index</button>   
+            </div>
+            <ul id="reply"></ul>
+
+        <pre>const addElement = () => fruits.push("mango"); //adds to end of list</pre>
+        <pre>const addElement = () => fruits.pop(); //removes last item</pre>
+        <pre>const addElement = () => fruits.unshift('mango'); //adds to [0] index of list</pre>
+        <pre>const addElement = () => fruits.shift(); // removes [0] index</pre><br/><br/>
+        <div>
+            Mutating method<br/>
+            copyWithin(), fill(), pop(), push(v1, v2), reverse(), shift()	
+            sort(), splice(), unshift(v1, v2)		
+        </div>
+
+        <div>
+            Non-mutating<br/> 
+            slice(), concat(), toReversed(), toSorted(), toSpliced()
+        </div>
+    </div>
+
+    <div class="textContainer">
+        <h3>.forEach(); .map();</h3>
+
+        <p>Remember that forEach() is useful when you want to perform an action on each 
+            element without creating a new array, while map() is ideal when you need to 
+            transform each element and create a new array based on the transformation.</p>
+        <pre>
+            let words = ['turing', 'ada', 'dijkstra', 'ritchie'];
+
+            words.forEach(capitalize);
+            words.forEach(display);
+
+
+            function upperCase(element, index, array){
+                array[index] = element.toUpperCase();
+            }
+
+            function capitalize(element, index, array){
+                array[index] = element.charAt(0).toUpperCase() + element.slice(1)
+            }
+
+            function display(element){
+                console.log(element);
+            }
+        </pre>
+        
+    </div>
+
+    <div class="textContainer">
+        <h1>JavaScript Array Methods</h1>
+
+        <h2>Iteration Methods</h2>
+        <ul>
+            <li><code>forEach()</code>: Iterates over each element and executes a provided function.</li>
+            <li><code>map()</code>: Creates a new array by applying a function to each element.</li>
+            <li><code>filter()</code>: Creates a new array with elements that pass a specified test.</li>
+            <li><code>reduce()</code>: Reduces an array to a single value by applying an accumulator function.</li>
+            <li><code>every()</code>: Checks if all elements satisfy a condition.</li>
+            <li><code>some()</code>: Checks if at least one element satisfies a condition.</li>
+        </ul>
+    
+        <h2>Transformation Methods</h2>
+        <ul>
+            <li><code>map()</code>: Transforms each element and creates a new array.</li>
+            <li><code>sort()</code>: Sorts elements in the array (in-place or by creating a new array).</li>
+            <li><code>reverse()</code>: Reverses the order of elements in the array.</li>
+            <li><code>concat()</code>: Combines two or more arrays into a new array.</li>
+            <li><code>slice()</code>: Creates a shallow copy of a portion of the array.</li>
+            <li><code>splice()</code>: Adds or removes elements from the array.</li>
+        </ul>
+    
+        <!-- Other categories (Search and Query Methods, Manipulation Methods, Utility Methods) can be added here -->
+    
+        <h2>Utility Methods</h2>
+        <ul>
+            <li><code>join()</code>: Joins array elements into a string.</li>
+            <li><code>toString()</code>: Converts the array to a string.</li>
+            <li><code>isArray()</code>: Checks if an object is an array.</li>
+            <li><code>length</code>: Property that returns the number of elements in the array.</li>
+        </ul><br/>
+
+        <p>More about arrays</p>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank">Array</a>
+    </div>
+    </div>
+    <script>
+        let repley = document.getElementById('reply');
+        let fruits = ["apple", "orange", "bannana", "coconut"];
+
+        const addElement = () => {fruits.push("mango"), results()}; //adds to end of list
+        const removeElement = () => {fruits.pop(), results()}; //removes last item
+        const add0Index = () => {fruits.unshift('mango'), results()}; //adds to [0] index of list
+        const remove0Index = () => {fruits.shift(), results()}; // removes [0] index
+        //let numberOfFruits = fruits.length;
+
+        function results(){
+            reply.innerHTML = "";
+            for (let i = 0; i < fruits.length; i++){
+                //add += to append li to the ul
+                
+                reply.innerHTML += "<li>" + fruits[i] + "</li>";
+            }
+        }
+    </script>
+
+</body>
+</html>

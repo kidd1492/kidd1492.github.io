@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="veiwport" content="width=device-qwidth, initial-scale=1.0">
+        <title>Python reference hub</title>
+        <link rel="stylesheet" href="styles/python.css">
+    </head>
+    <body>
+    <div class="menu">
+        <a href="index.html">Home</a>
+        <a href="learning_hub.html">Leaning Hub</a>
+        <a href="javascript.html">JavaScript</a>
+    </div>
+
+    <div class="container">    
+        <div class="textContainer">
+            <h2>Asynchronous Definition:</h2>
+            <p>In general, asynchronous refers to things that do not happen simultaneously or concurrently in time.</p>
+
+            <pre>
+                function function1(){
+                    setTimeout(() => {console.log('Task 1');}, 3000);
+                };
+            
+            
+                function function2(){
+                    console.log('task 2');
+                    console.log('task 3');
+                    console.log('task 4');
+                }
+            
+            
+                function1();
+                function2();</pre>
+
+                <h2 id="task2"></h2>
+                <h2 id="task3"></h2>
+                <h2 id="task4"></h2>
+                <h2 id="task1"></h2>
+
+                <button onclick="runCode()">Run Code</button>
+
+            <p>Let’s break it down:</p>
+
+                <li>function1:</li>
+                <p>This function simulates an asynchronous operation (such as fetching data from an API) using setTimeout.
+                It waits for 3000 milliseconds (3 seconds) and then logs “Task 1”.</p>
+
+                <p>function2 Will run without waiting for function one to finish. It is independent</p>.
+                <li>function2:</li>
+                <p>This function logs “task 2”, “task 3”, and “task 4” synchronously (immediately).</p><br/>
+                
+                The order of execution is as follows:<br/><br/>
+                
+                <li>“task 2”</li>
+                <li>“task 3”</li>
+                <li>“task 4”</li>
+                <li>“Task 1” (after 3 seconds)</li><br/><br/>
+    </div>
+
+<script>
+    const task1 = document.getElementById('task1');
+    const task2 = document.getElementById('task2');
+    const task3 = document.getElementById('task3');
+    const task4 = document.getElementById('task4');
+
+    function runCode(){
+        function function1(){
+            setTimeout(() => {task1.innerHTML = "Task 1 Complete";}, 3000);
+        };
+
+        function function2(){
+            task2.innerHTML = "Task 2 Complete";
+            task3.innerHTML = "Task 3 Complete";
+            task4.innerHTML = "Task 4 Complete";
+        };
+
+
+        function1();
+        function2();
+    }
+</script>
+
+</body>
+</html>
