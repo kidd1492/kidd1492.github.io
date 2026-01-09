@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="veiwport" content="width=device-qwidth, initial-scale=1.0">
+        <title>AI Learning Roadmap</title>
+        <style>
+            ul { margin-left: 25px; }
+            ol { margin-left: 10px; }
+        </style>
+        <link rel="stylesheet" href="styles/python.css">
+    </head>
+
+    <body>
+    <div class="menu">
+        <a href="index.html">Home</a>
+        <a href="learning_hub.html">Leaning Hub</a>
+        <a href="neural_nets_home.html">Neural Networks Home</a>
+        <a href="https://humansideoftek.blogspot.com/">Blog</a>
+    </div>
+
+    <div class="container">
+        <div class="topics">
+
+            <button><a href="learning_hub.html">Learning Hub Home</button></a>
+            <button><a href="neural_nets_home.html">Neural Networks</a></button>
+            <button><a href="python.html">Python</a></button>
+            <button><a href="javascript.html">Javascript</a></button>
+            <button onclick="showImage('activation')">Tools</button>
+        </div>
+
+        <div class="content">
+            <div class="titleContainer">
+                <div class="mainTitle">
+                    <h1 id="titleEx">Neural Network Learning Hub!</h1>
+                </div>
+            </div>
+
+            <div id="textContainer" class="textContainer">
+
+            <h1>AI Learning Roadmap</h1><br/>
+
+            <!-- SECTION 1 -->
+            <h2>Section 1: Foundations (Math, Regression, Classification, XOR)</h2><br/>
+            <p>These four projects build the mental model of linear algebra → optimization → nonlinearity.</p><br/>
+
+            <ol>
+                <li>
+                <a href="#">Single‑Feature Linear Regression</a><br/>
+                <ul>
+                    <li>MSE, gradients, updates</li>
+                    <li>r, R², OLS</li>
+                    <li>Geometry of projection</li>
+                </ul>
+                </li><br/>
+
+                <li>
+                <a href="#">Multi‑Feature Regression</a><br/>
+                <ul>
+                    <li>Square footage + age → price</li>
+                    <li>Vectorized dot products</li>
+                    <li>Weight vector as a direction in feature space</li>
+                    <li>Plane instead of line</li>
+                    <li>Residual vectors</li>
+                </ul>
+                </li><br/>
+
+                <li>
+                <a href="#">Binary Classification</a><br/>
+                <ul>
+                    <li>Condition (good vs. bad) from price + age</li>
+                    <li>Logistic regression</li>
+                    <li>Sigmoid</li>
+                    <li>Cross‑entropy</li>
+                    <li>Decision boundary geometry</li>
+                </ul>
+                </li><br/>
+
+                <li>
+                <a href="#">Neural Network for XOR</a><br/>
+                <ul>
+                    <li>First nonlinear model</li>
+                    <li>Hidden layer</li>
+                    <li>Activation functions</li>
+                    <li>Why linear models fail</li>
+                    <li>Geometry of separating non‑linearly separable data</li>
+                </ul>
+                </li><br/>
+            </ol>
+
+            <!-- SECTION 2 -->
+            <h2>Section 2: Sequence Models (RNN → LSTM → Proto‑LLM)</h2><br/>
+            <p>This is where you transition from static vectors to temporal vectors.</p><br/>
+
+            <ol start="5">
+                <li>
+                <a href="#">Simple RNN: Next Character Predictor</a><br/>
+                <ul>
+                    <li>Teach recurrence</li>
+                    <li>Teach exploding/vanishing gradients</li>
+                    <li>Show how memory works</li>
+                </ul>
+                </li><br/>
+
+                <li>
+                <a href="#">LSTM: Better Sequence Memory</a><br/>
+                <ul>
+                    <li>Gates</li>
+                    <li>Cell state</li>
+                    <li>Why LSTMs solved long‑range dependencies</li>
+                </ul>
+                </li><br/>
+
+                <li>
+                <a href="#">Translation Mini‑Model (English → Spanish)</a><br/>
+                <ul>
+                    <li>Sequence‑to‑sequence</li>
+                    <li>Encoder/decoder</li>
+                    <li>Attention (optional preview)</li>
+                </ul>
+                </li><br/>
+            </ol>
+
+            <!-- SECTION 3 -->
+            <h2>Section 3: Agentic Systems (Local Models → LangGraph → RAG)</h2><br/>
+            <p>This is where you connect neural nets to real‑world systems.</p><br/>
+
+            <ol start="8">
+                <li>
+                <a href="#">Local Model Inference with Ollama</a><br/>
+                <ul>
+                    <li>Run models offline</li>
+                    <li>Tokenization</li>
+                    <li>Prompting</li>
+                    <li>Embeddings</li>
+                </ul>
+                </li><br/>
+
+                <li>
+                <a href="#">LangGraph — Build a Multi‑Agent Workflow</a><br/>
+                <ul>
+                    <li>Planner</li>
+                    <li>Tools</li>
+                    <li>Memory</li>
+                    <li>State machines</li>
+                </ul>
+                </li><br/>
+
+                <li>
+                <a href="#">RAG System</a><br/>
+                <ul>
+                    <li>Embeddings</li>
+                    <li>Vector search</li>
+                    <li>Retrieval</li>
+                    <li>Context injection</li>
+                </ul>
+                </li>
+            </ol>
+            </div>
+        </div>
+    <script src="scripts/learning_hub.js"></script>
+</body>
+</html>
