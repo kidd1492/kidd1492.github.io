@@ -14,10 +14,6 @@ function getExamples(example){
             <li>Variables do not need to be declared with a specific type.
             You can even change a variable’s type after it has been set:</li>
 
-            <h3>Casting<h3>
-
-            <li>Variables do not need to be declared with a specific type.
-            You can even change a variable’s type after it has been set:</li><br/>
 
 <pre>
     x = str(3)    # x will be '3'
@@ -76,74 +72,79 @@ def function_name(argument, argument):
             scriptContainer.innerHTML = codeExFunction;
             break;
 
-        case 'dataTypes':
-            const textDataTypes  = `
-            <h3>Numeric Types:</h3>
-    <ul>
-        <li><strong>Integers (\`int\`):</strong> Represent whole numbers (e.g., 5, -10).</li>
-        <li><strong>Floating-Point Numbers (\`float\`):</strong> Represent decimal numbers (e.g., 3.14, -0.5).</li>
-        <li><strong>Complex Numbers (\`complex\`):</strong> Represent numbers with both real and imaginary parts (e.g., 2 + 3j).</li>
-    </ul>
+case 'dataTypes':
+    const textDataTypes = `
+        <h3>Numeric Types</h3>
+        <ul>
+            <li><strong>Integers (<code>int</code>)</strong>: Whole numbers such as 5 or -10.</li>
+            <li><strong>Floating-Point Numbers (<code>float</code>)</strong>: Decimal values like 3.14 or -0.5.</li>
+            <li><strong>Complex Numbers (<code>complex</code>)</strong>: Numbers with real and imaginary parts, e.g., 2 + 3j.</li>
+        </ul>
 
-    <h3>Text Type:</h3>
-    <p><strong>Strings (\`str\`):</strong> Represent sequences of characters (e.g., "Hello, World!").</p>
+        <h3>Text Type</h3>
+        <p><strong>Strings (<code>str</code>)</strong>: Sequences of characters, such as "Hello, World!".</p>
 
-    <h3>Sequence Types:</h3>
-    <ul>
-        <li><strong>Lists (\`list\`):</strong> Ordered collections of items (e.g., [1, 2, 3]).</li>
-        <li><strong>Tuples (\`tuple\`):</strong> Immutable ordered collections (e.g., (1, 2, 3)).</li>
-        <li><strong>Ranges (\`range\`):</strong> Represents a sequence of numbers (e.g., range(5)).</li>
-    </ul>
+        <h3>Sequence Types</h3>
+        <ul>
+            <li><strong>Lists (<code>list</code>)</strong>: Ordered, mutable collections (e.g., [1, 2, 3]).</li>
+            <li><strong>Tuples (<code>tuple</code>)</strong>: Ordered, immutable collections (e.g., (1, 2, 3)).</li>
+            <li><strong>Ranges (<code>range</code>)</strong>: Represents a sequence of numbers (e.g., range(5)).</li>
+        </ul>
 
-    <h3>Mapping Type:</h3>
-    <p><strong>Dictionaries (\`dict\`):</strong> Key-value pairs (e.g., {"name": "John", "age": 30}).</p>
+        <h3>Mapping Type</h3>
+        <p><strong>Dictionaries (<code>dict</code>)</strong>: Key–value pairs, such as {"name": "John", "age": 30}.</p>
 
-    <h3>Set Types:</h3>
-    <ul>
-        <li><strong>Sets (\`set\`):</strong> Unordered collections of unique elements (e.g., {1, 2, 3}).</li>
-        <li><strong>Frozen Sets (\`frozenset\`):</strong> Immutable sets (e.g., frozenset({1, 2, 3})).</li>
-    </ul>
+        <h3>Set Types</h3>
+        <ul>
+            <li><strong>Sets (<code>set</code>)</strong>: Unordered collections of unique values (e.g., {1, 2, 3}).</li>
+            <li><strong>Frozen Sets (<code>frozenset</code>)</strong>: Immutable sets.</li>
+        </ul>
 
-    <h3>Boolean Type:</h3>
-    <p><strong>Booleans (\`bool\`):</strong> Represent truth values (True or False).</p>
+        <h3>Boolean Type</h3>
+        <p><strong>Booleans (<code>bool</code>)</strong>: Represent truth values: True or False.</p>
 
-    <h3>Binary Types:</h3>
-    <ul>
-        <li><strong>Bytes (\`bytes\`):</strong> Immutable sequences of bytes (e.g., b"hello").</li>
-        <li><strong>Byte Arrays (\`bytearray\`):</strong> Mutable sequences of bytes.</li>
-        <li><strong>Memory Views (\`memoryview\`):</strong> Provide a view of memory as an array of bytes.</li>
-    </ul>
+        <h3>Binary Types</h3>
+        <ul>
+            <li><strong>Bytes (<code>bytes</code>)</strong>: Immutable sequences of bytes (e.g., b"hello").</li>
+            <li><strong>Byte Arrays (<code>bytearray</code>)</strong>: Mutable sequences of bytes.</li>
+            <li><strong>Memory Views (<code>memoryview</code>)</strong>: Views into byte-oriented memory.</li>
+        </ul>
 
-    <h3>None Type:</h3>
-    <p><strong>NoneType (\`None\`):</strong> Represents the absence of a value (similar to null).</p>
+        <h3>None Type</h3>
+        <p><strong>NoneType (<code>None</code>)</strong>: Represents the absence of a value.</p>
 
-    <h3>Getting the Data Type</h3>
-    <p>You can use the <code>type()</code> function to determine the data type of any object. For example:</p>
-    <pre><code>x = 5
-print(type(x))  # Output: &lt;class 'int'&gt;</code></pre>
+        <h3>Getting the Data Type</h3>
+        <p>Use the <code>type()</code> function to check an object's data type.</p>
 
-    <h3>Setting the Data Type</h3>
-    <p>In Python, the data type is set when you assign a value to a variable. For instance:</p>
-    <pre><code>x = "Hello World"  # assigns a string value to x
-x = 20  # assigns an integer value to x
-x = 20.5  # assigns a floating-point value to x</code></pre>
+        <h3>Setting the Data Type</h3>
+        <p>Python assigns a data type automatically when you assign a value to a variable.</p>
 
-    <h3>Constructor Functions (Specifying Data Type)</h3>
-    <p>If you want to explicitly specify the data type, you can use constructor functions:</p>
-    <pre><code>x = str("Hello World")  # String
-x = int(20)  # Integer
-x = float(20.5)  # Float
-x = complex(1j)  # Complex
-# ... and so on for other types</code></pre>
-            `;
-        
-            const codeExDataTypes = 
-                ``;
+        <h3>Constructor Functions</h3>
+        <p>You can explicitly set a data type using constructor functions.</p>
+    `;
 
-            titleEx.innerHTML = "Data Types in Python"
-            textContainer.innerHTML = textDataTypes;
-            scriptContainer.innerHTML = codeExDataTypes;
-            break;
+    const codeExDataTypes = `
+# Getting the data type
+x = 5
+print(type(x))  # <class 'int'>
+
+# Setting the data type by assignment
+x = "Hello World"  # str
+x = 20             # int
+x = 20.5           # float
+
+# Constructor functions
+x = str("Hello World")
+x = int(20)
+x = float(20.5)
+x = complex(1j)
+    `;
+
+    titleEx.innerHTML = "Data Types in Python";
+    textContainer.innerHTML = textDataTypes;
+    scriptContainer.innerHTML = codeExDataTypes;
+    break;
+
 
         case 'objects':
             const textObjects = `

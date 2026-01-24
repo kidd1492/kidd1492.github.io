@@ -4,6 +4,8 @@
     padding: 0;
 }
 
+li {padding: 5px;}
+
 html,body{
   min-height: 100vh;
   margin:0;
