@@ -88,77 +88,89 @@
                     <li>Geometry of separating non‑linearly separable data</li>
                 </ul>
                 </li><br/>
-            </ol>
+
+                <li>
+                <a href="https://humansideoftek.blogspot.com/2026/02/project-5-design-matrix.html",
+                target="blank">The Design Matrix</a><br/>
+                <ul><br/>
+                    <li>Why ML always uses a matrix</li>
+                    <li>How neural networks generalize it</li>
+                    <li>How shapes flow through the system</li>
+                    <li>How this is a neural network layer</li>
+                </ul>
+                </li><br/>
+            </ol><br />
+
+            <a href="intro_nn.html">Neural Networks Simple Math</a>
+            3 images explaining what these 5 projects teach.</p><br/>
+            
 
             <!-- SECTION 2 -->
-            <h2>Section 2: Sequence Models (RNN → LSTM → Proto‑LLM)</h2><br/>
-            <p>This is where you transition from static vectors to temporal vectors.</p><br/>
+            <h2>Section 2: Building Real Neural Networks (Projects 6–10)</h2><br/>
+            <p>This is where you move from single neurons to full, modular neural network architectures—first from scratch, then with PyTorch.</p><br/>
 
-            <ol start="5">
+            <ol start="6">
                 <li>
-                <a href="#">Simple RNN: Next Character Predictor</a><br/>
+                <a href="https://github.com/kidd1492/10_projects_AI/tree/main/section_2/nn_class_full_setup"
+                target="_blank">Build a Neural Network Class From Scratch</a><br/>
                 <ul><br/>
-                    <li>Teach recurrence</li>
-                    <li>Teach exploding/vanishing gradients</li>
-                    <li>Show how memory works</li>
+                    <li>A Layer class</li>
+                    <li>A NeuralNetwork class</li>
+                    <li>Forward pass</li>
+                    <li>Backprop</li>
+                    <li>Training loop</li>
+                    <li>Loss functions</li>
+                    <li>Activation functions</li>
+                    <li>Modular architecture</li>
                 </ul>
                 </li><br/>
 
                 <li>
-                <a href="#">LSTM: Better Sequence Memory</a><br/>
+                <a href="#">Introduction to PyTorch (Tensors, Autograd, Modules)</a><br/>
                 <ul><br/>
+                    <li>How PyTorch replaces your manual gradients</li>
+                    <li>How nn.Module mirrors your custom class</li>
+                    <li>How autograd works</li>
+                    <li>How optimizers work</li>
+                    <li>How to rewrite your Project 5 network in PyTorch</li>
+                </ul>
+                </li><br/>
+
+                <li>
+                <a href="#">Recurrent Neural Networks (RNNs)</a><br/>
+                <ul><br/>
+                    <li>Sequence modeling</li>
+                    <li>Hidden state</li>
+                    <li>Unrolling</li>
+                    <li>Vanishing gradients</li>
+                    <li>PyTorch’s nn.RNN</li>
+                </ul>
+                </li><br/>
+
+                <li>
+                <a href="#">LSTM Networks</a><br/>
+                <ul><br/>
+                    <li>The natural evolution of Project 7</li>
                     <li>Gates</li>
                     <li>Cell state</li>
-                    <li>Why LSTMs solved long‑range dependencies</li>
+                    <li>Long‑term memory</li>
+                    <li>Why LSTMs solve vanishing gradients</li>
+                    <li>PyTorch’s nn.LSTM</li>
                 </ul>
                 </li><br/>
 
                 <li>
-                <a href="#">Translation Mini‑Model (English → Spanish)</a><br/>
+                <a href="#">GRU or CNN (Your Choice)</a><br/>
                 <ul><br/>
-                    <li>Sequence‑to‑sequence</li>
-                    <li>Encoder/decoder</li>
-                    <li>Attention (optional preview)</li>
+                    <li>Explore GRU as a simplified gated RNN, or</li>
+                    <li>Explore CNNs for spatial feature extraction</li>
+                    <li>Compare trade‑offs and ideal use cases</li>
                 </ul>
                 </li><br/>
             </ol>
 
-            <!-- SECTION 3 -->
-            <h2>Section 3: Agentic Systems (Local Models → LangGraph → RAG)</h2><br/>
-            <p>This is where you connect neural nets to real‑world systems.</p><br/>
-
-            <ol start="8">
-                <li>
-                <a href="https://humansideoftek.blogspot.com/2025/09/how-ai-agent-works-without-framework.html", target="_blank">How an AI Agent Works Without a Framework</a><br/><br/>
-                <ul>
-                    <li><a href="https://humansideoftek.blogspot.com/2025/09/ollama-local-model-deployment-guide.html", target="_blank">Run models offline</a></li>
-                    <li><a href="https://humansideoftek.blogspot.com/2025/09/how-ai-agent-works-without-framework.html", target="_blank">AI Agent from scratch</a></li>
-                    <li>tool calls</li>
-                    <li>User inputs</li>
-                    <li><a href="https://humansideoftek.blogspot.com/2025/09/how-ai-agent-evolves-from-manual-memory.html", target="blank">Memory</a></li>
-                </ul>
-                </li><br/>
-
-                <li>
-                <a href="https://github.com/kidd1492/AI_agents.git", target="_blank">LangGraph Framework for Agent Workflow</a><br/><br/>
-                <ul>
-                    <li>Tools</li>
-                    <li>Memory</li>
-                    <li>State machines</li>
-                </ul>
-                </li><br/>
-
-                <li>
-                <a href="https://github.com/kidd1492/expert_in_a_box", target="_blank">RAG System</a><br/><br/>
-                <ul>
-                    <li>Embeddings</li>
-                    <li>Vector search</li>
-                    <li>Retrieval</li>
-                    <li>Context injection</li>
-                </ul>
-                </li>
-            </ol><br/>
-            <a href="intro_nn.html">Neural Networks Simple Math</a>
+            <a href="https://humansideoftek.blogspot.com/2026/02/core-concepts-of-machine-learning.html",
+            target="blank">The Core Concepts of Machine Learning</a>
             </div>
         </div>
     <script src="scripts/learning_hub.js"></script>
