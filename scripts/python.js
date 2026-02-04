@@ -6,481 +6,866 @@ const scriptContainer = document.getElementById('scriptContainer');
 
 function getExamples(example){
     switch(example){
-        case 'variable':
-            const textVariable = `
-            <li>Unlike languages like C# or Java, Python does not require explicit 
-            variable declaration. You can create a variable by simply assigning a value to it.</li>
+case 'variable':
+    const textVariable = `
+        <h3>Python Variables</h3><br/>
 
-            <li>Variables do not need to be declared with a specific type.
-            You can even change a variable’s type after it has been set:</li>
+        <ul>
+            <li>A variable is a name that refers to a value stored in memory.</li>
+            <li>You create a variable by assigning a value using the <code>=</code> operator.</li>
+            <li>Python does not require you to declare variables before using them.</li>
+            <li>Variables can be reassigned to new values at any time.</li>
+            <li>Variable names are case‑sensitive and must follow Python naming rules.</li></br>
+        </ul>
 
+        <h3>Variable Naming Rules</h3><br/>
+        <ul>
+            <li>Must start with a letter or underscore.</li>
+            <li>Cannot start with a number.</li>
+            <li>Can contain letters, numbers, and underscores.</li>
+            <li>Should be descriptive (good practice).</li>
+        </ul><br/>
 
-<pre>
-    x = str(3)    # x will be '3'
-    y = int(3)    # y will be 3
-    z = float(3)  # z will be 3.0
-</pre>
-
-            <li>You can use the type() function to determine a variable’s data type:</li>
-
-<pre>
-    x = 10;
-    print(type(x)) # Output: <class 'int'>
-
-</pre>`;
-
-            const codeExVariable = 
-`<pre>
+        <h3>Assigning Values</h3>
+        <pre><code>
 x = 10
-y = 20
-z = x + y
-</pre>`
-                            
-            titleEx.innerHTML = "Variable"
-            textContainer.innerHTML = textVariable;
-            scriptContainer.innerHTML = codeExVariable;
-            break;
-        
-        case 'function' : 
-            const textFunction = `
-            <h3>Python Functions</h3>
-            <li>The def keyword indicates the start of a function definition.</li>
-            <li>The colon (:) indicates the start of the function body.</li>
-            <li>Python functions are dynamically typed. You don’t need to declare the data type of function parameters or return values.</li>
-            <h3>Variable-Length Arguments:</h3>
-            <li>Functions can accept a variable number of arguments using *args (for positional arguments) and **kwargs (for keyword arguments).</li>
-            <pre>
-    def print_args(*args):
-        for arg in args:
-            print(arg)
+name = "Alice"
+is_active = True
+        </code></pre>
 
-    </pre>
-            <h3>Lambda Functions (Anonymous Functions):</h3>
-            <li>You can create small, anonymous functions using the lambda keyword.</li>
-            <pre>add = lambda x, y: x + y</pre>
-            `;
+        <h3>Reassigning Variables</h3>
+        <pre><code>
+x = 10
+x = 20   # now x refers to a new value
+        </code></pre>
 
-            const codeExFunction = `Python function example:<br><br>
-<pre>
-def function_name(argument, argument):
-    indented code to be exicuted
-    return x
-</pre><br/>`;
+        <h3>Multiple Assignment</h3>
+        <pre><code>
+a, b, c = 1, 2, 3
+        </code></pre>
 
-            titleEx.innerHTML = "Functions"
-            textContainer.innerHTML = textFunction;
-            scriptContainer.innerHTML = codeExFunction;
-            break;
+        <h3>Swapping Values (Pythonic)</h3>
+        <pre><code>
+x = 5
+y = 10
+x, y = y, x
+        </code></pre>
+    `;
+
+    const codeExVariable = `
+<pre><code>
+# Basic variable usage
+message = "Hello"
+count = 3
+
+# Reassignment
+count = count + 1
+
+# Multiple assignment
+x, y = 10, 20
+
+# Swapping
+x, y = y, x
+</code></pre>
+    `;
+
+    titleEx.innerHTML = "Variables";
+    textContainer.innerHTML = textVariable;
+    scriptContainer.innerHTML = codeExVariable;
+    break;
+
+
 
 case 'dataTypes':
     const textDataTypes = `
-        <h3>Numeric Types</h3>
+        <h3>Python Data Types</h3><br/>
+
+        <p>Python automatically assigns a data type based on the value you store in a variable.  
+        Data types describe the kind of data a value represents.</p><br/>
+
+        <h3>Common Built‑In Types</h3><br/>
+
+        <strong>Numeric Types</strong><br/>
         <ul>
-            <li><strong>Integers (<code>int</code>)</strong>: Whole numbers such as 5 or -10.</li>
-            <li><strong>Floating-Point Numbers (<code>float</code>)</strong>: Decimal values like 3.14 or -0.5.</li>
-            <li><strong>Complex Numbers (<code>complex</code>)</strong>: Numbers with real and imaginary parts, e.g., 2 + 3j.</li>
-        </ul>
+            <li><code>int</code> – whole numbers (10, -5)</li>
+            <li><code>float</code> – decimal numbers (3.14, -0.5)</li>
+            <li><code>complex</code> – numbers with real + imaginary parts (2 + 3j)</li>
+        </ul><br/>
 
-        <h3>Text Type</h3>
-        <p><strong>Strings (<code>str</code>)</strong>: Sequences of characters, such as "Hello, World!".</p>
-
-        <h3>Sequence Types</h3>
+        <strong>Text Type</strong><br/>
         <ul>
-            <li><strong>Lists (<code>list</code>)</strong>: Ordered, mutable collections (e.g., [1, 2, 3]).</li>
-            <li><strong>Tuples (<code>tuple</code>)</strong>: Ordered, immutable collections (e.g., (1, 2, 3)).</li>
-            <li><strong>Ranges (<code>range</code>)</strong>: Represents a sequence of numbers (e.g., range(5)).</li>
-        </ul>
+            <li><code>str</code> – text values ("Hello")</li>
+        </ul><br/>
 
-        <h3>Mapping Type</h3>
-        <p><strong>Dictionaries (<code>dict</code>)</strong>: Key–value pairs, such as {"name": "John", "age": 30}.</p>
-
-        <h3>Set Types</h3>
+        <strong>Sequence Types</strong><br/>
         <ul>
-            <li><strong>Sets (<code>set</code>)</strong>: Unordered collections of unique values (e.g., {1, 2, 3}).</li>
-            <li><strong>Frozen Sets (<code>frozenset</code>)</strong>: Immutable sets.</li>
-        </ul>
+            <li><code>list</code> – ordered, changeable collection</li>
+            <li><code>tuple</code> – ordered, unchangeable collection</li>
+            <li><code>range</code> – sequence of numbers</li>
+        </ul><br/>
 
-        <h3>Boolean Type</h3>
-        <p><strong>Booleans (<code>bool</code>)</strong>: Represent truth values: True or False.</p>
-
-        <h3>Binary Types</h3>
+        <strong>Mapping Type</strong><br/>
         <ul>
-            <li><strong>Bytes (<code>bytes</code>)</strong>: Immutable sequences of bytes (e.g., b"hello").</li>
-            <li><strong>Byte Arrays (<code>bytearray</code>)</strong>: Mutable sequences of bytes.</li>
-            <li><strong>Memory Views (<code>memoryview</code>)</strong>: Views into byte-oriented memory.</li>
-        </ul>
+            <li><code>dict</code> – key/value pairs</li>
+        </ul><br/>
 
-        <h3>None Type</h3>
-        <p><strong>NoneType (<code>None</code>)</strong>: Represents the absence of a value.</p>
+        <strong>Set Types</strong><br/>
+        <ul>
+            <li><code>set</code> – unordered collection of unique items</li>
+            <li><code>frozenset</code> – immutable set</li>
+        </ul><br/>
 
-        <h3>Getting the Data Type</h3>
-        <p>Use the <code>type()</code> function to check an object's data type.</p>
+        <strong>Boolean Type</strong><br/>
+        <ul>
+            <li><code>bool</code> – True or False</li>
+        </ul><br/>
 
-        <h3>Setting the Data Type</h3>
-        <p>Python assigns a data type automatically when you assign a value to a variable.</p>
+        <strong>None Type</strong><br/>
+        <ul>
+            <li><code>None</code> – represents “no value”</li>
+        </ul><br/>
 
-        <h3>Constructor Functions</h3>
-        <p>You can explicitly set a data type using constructor functions.</p>
+        <h3>Checking a Data Type</h3><br/>
+        <pre><code>
+x = 10
+print(type(x))   # <class 'int'>
+        </code></pre><br/>
     `;
 
     const codeExDataTypes = `
-# Getting the data type
-x = 5
-print(type(x))  # <class 'int'>
-
-# Setting the data type by assignment
-x = "Hello World"  # str
-x = 20             # int
-x = 20.5           # float
-
-# Constructor functions
-x = str("Hello World")
-x = int(20)
-x = float(20.5)
-x = complex(1j)
+<pre><code>
+# Examples of different data types
+a = 10            # int
+b = 3.14          # float
+c = "Hello"       # str
+d = [1, 2, 3]     # list
+e = (1, 2, 3)     # tuple
+f = {"name": "Sam", "age": 30}  # dict
+g = {1, 2, 3}     # set
+h = True          # bool
+i = None          # NoneType
+</code></pre>
     `;
 
-    titleEx.innerHTML = "Data Types in Python";
+    titleEx.innerHTML = "Data Types";
     textContainer.innerHTML = textDataTypes;
     scriptContainer.innerHTML = codeExDataTypes;
     break;
 
 
-        case 'objects':
-            const textObjects = `
-            <h3>In Object-Oriented Programming (OOP), objects are the central concept around which the programming model is built.</h3>
-<p>Here’s a breakdown of objects in OOP:</p>
+case 'conditionals':
+    const textConditionals = `
+        <h3>Python Conditionals</h3><br/>
 
-<h3>Objects</h3>
-<ul>
-  <li><strong>Definition:</strong> Objects are instances of classes that represent entities with attributes and behaviors. They are the basic run-time entities in an object-oriented system.</li>
-  <li><strong>Attributes:</strong> Also known as properties, these are the data stored inside an object. They define the state of the object.</li>
-  <li><strong>Behaviors:</strong> Defined by methods within the class, behaviors are the actions that an object can perform.</li>
-  <li><strong>Identity:</strong> Each object has a unique identity, which allows objects to interact with each other within a system.</li>
-</ul>
+        <p>Conditionals let your program make decisions based on whether a condition is True or False.</p><br/>
 
-<h3>Classes</h3>
-<ul>
-  <li><strong>Blueprints:</strong> Classes are the templates or blueprints for creating objects. They define the attributes and methods that their objects will have.</li>
-  <li><strong>Abstraction:</strong> Classes often represent broad categories, like Car or Dog, and they encapsulate all the details that are common to the objects of that type.</li>
-</ul>
-
-<h3>Instances</h3>
-<ul>
-  <li><strong>Specificity:</strong> While a class is a broad template, an instance is a specific object created from a class. It has concrete values for the properties defined by its class.</li>
-  <li><strong>Example:</strong> If Car is a class, then myCar could be an instance of the Car class with specific attributes like color, brand, and model.</li>
-</ul>
-
-<h3>Class-Object Relationship</h3>
-<ul>
-  <li><strong>Instantiation:</strong> The process of creating an object from a class is called instantiation. When you instantiate a class, you get an object that has its own attributes and methods.</li>
-  <li><strong>Reuse:</strong> Classes can be reused to create multiple objects. Each object is independent and can have different attribute values, but they share the structure and behavior defined by their class.</li>
-</ul>
-
-<h3>Key Principles of OOP Related to Objects</h3>
-<ul>
-  <li><strong>Encapsulation:</strong> Objects encapsulate data and methods. This means that the internal state of an object is protected from outside interference and misuse.</li>
-  <li><strong>Inheritance:</strong> Objects can inherit attributes and behaviors from other objects, allowing for code reuse and the creation of a hierarchy.</li>
-  <li><strong>Polymorphism:</strong> Objects can take on many forms. An object can be treated as an instance of its parent class rather than its actual class.</li>
-</ul>
-
-<h3>Example in Python</h3>
-<pre>
-<code>
-class Car:
-    def __init__(self, make, model, year):
-        self.make = make
-        self.model = model
-        self.year = year
-
-# Creating a new Car object
-my_car = Car('Tesla', 'Model S', 2020)
-</code>
-</pre>
-
-<p>Objects are fundamental to OOP as they are the entities that hold data and exhibit behavior. They allow programmers to create modular and reusable code, which can lead to more efficient and manageable software development.</p>
-
-            `;
-
-            const codeExObjects = 
-                ``;
-        
-            titleEx.innerHTML = "Objects"   
-            textContainer.innerHTML = textObjects ;
-            scriptContainer.innerHTML = codeExObjects;
-            break;
-
-
-
-        case 'conditionals':
-            const textConditionals = ` Conditionals allow you to control the flow of your program based on specific criteria. 
-            They’re essential for making decisions and handling different scenarios in your code!<br/><br/>
-            Conditional statements in Python allow you to test a condition and execute a block of code based on the result of that test.<br><br/>
-            <br/><br/>
-<pre>
+        <pre><code>
 if condition:
-    # code to execute if condition is true
+    # code runs if condition is True
 elif another_condition:
-    # code to execute if another_condition is true
+    # runs if previous conditions were False
 else:
-    # code to execute if none of the above conditions are true
-}</pre>`;
+    # runs if none of the above were True
+        </code></pre><br/>
 
-            const codeExConditionals = 
-`<pre>
-const num = 10;
+        <h3>Comparison Operators</h3><br/>
+        <ul>
+            <li><code>==</code> equal to</li>
+            <li><code>!=</code> not equal</li>
+            <li><code>&gt;</code> greater than</li>
+            <li><code>&lt;</code> less than</li>
+            <li><code>&gt;=</code> greater or equal</li>
+            <li><code>&lt;=</code> less or equal</li>
+        </ul><br/>
+    `;
+
+    const codeExConditionals = `
+<pre><code>
 x = 10
 y = 20
 
 if x > y:
-    print("x is greater than y")
+    print("x is greater")
 elif x < y:
-    print("x is less than y")
+    print("x is smaller")
 else:
     print("x and y are equal")
+</code></pre>
+    `;
 
-}</pre>`;
-
-            titleEx.innerHTML = "Conditionals"
-            textContainer.innerHTML = textConditionals;
-            scriptContainer.innerHTML = codeExConditionals;
-            break;
-
-        
-        case 'array': 
-            const textArray = `
-            <h3>In Python, arrays are a collection of items stored at contiguous memory locations, and they are used to store multiple values of the same type under a single variable name.</h3>
-<p>Here’s what you need to know about arrays in Python:</p>
-
-<h3>Python Lists as Arrays</h3>
-<ul>
-  <li>Python does not have built-in support for arrays like some other languages, but you can use lists to achieve similar functionality.</li><br>
-</ul>
-
-<h3>Creating Arrays</h3>
-<ul>
-  <li>You can create arrays in Python by importing the array module from the standard library. This allows you to create a typed array that contains elements of the specified type.</li><br>
-</ul>
-
-<h3>Accessing Elements</h3>
-<ul>
-  <li>You can access array elements using their index number. In Python, indices start at 0.</li><br>
-</ul>
-
-<h3>Adding Elements</h3>
-<ul>
-  <li>Use the append() method to add an element to the end of an array, or the insert() method to add an element at a specific index.</li><br>
-</ul>
-
-<h3>Removing Elements</h3>
-<ul>
-  <li>The pop() method removes an element at a specified index, while the remove() method removes the first occurrence of a specified value.</li><br>
-</ul>
-
-<h3>Array Operations</h3>
-<ul>
-  <li>You can perform operations like looping through elements, finding the length of an array using len(), and sorting the elements.</li><br>
-</ul>
-
-<h3>NumPy Arrays</h3>
-<ul>
-  <li>For more advanced array operations, especially for numerical data, the NumPy library is commonly used. NumPy arrays are optimized for numerical computations and support a wide range of mathematical operations.</li><br>
-</ul>
-            `;
-
-            const codeExArray = `
-<pre>
-import array as arr
-
-# Create an array of integers
-numbers = arr.array('i', [1, 2, 3, 4, 5])
-
-# Access elements
-print(numbers[0])  # Output: 1
-
-# Add elements
-numbers.append(6)
-numbers.insert(2, 99)
-
-# Remove elements
-numbers.pop()
-numbers.remove(99)
-
-# Get array length
-print(len(numbers))  # Output: 5
-
-# Loop through the array
-for number in numbers:
-    print(number)
-
-</pre>`;
-
-            titleEx.innerHTML = "Array"
-            textContainer.innerHTML = textArray;
-            scriptContainer.innerHTML = codeExArray;
-            break;
-
-        
-
-        case 'class': 
-            const textClass = `Class<br/><br/>
-            <p>In Python, classes are like blueprints for creating objects. A class defines a set of attributes and
-            methods that will characterize any object created from the class.</p>
+    titleEx.innerHTML = "Conditionals";
+    textContainer.innerHTML = textConditionals;
+    scriptContainer.innerHTML = codeExConditionals;
+    break;
 
 
-            <h3>Here’s a simple breakdown of the concepts:</h3>
+case 'forLoops':
+    const textForLoop = `
+        <h3>Python For Loops</h3><br/>
 
-            <li>Class: A user-defined prototype for an object that defines a set of attributes and methods for the object. 
-            It’s like a blueprint for creating instances (objects).</li>
-            <li>Object: An instance of a class. It’s a specific realization of the class with actual values, representing an 
-            entity with state and behavior.</li>
-            <li>Attribute: A variable that belongs to an object or class. It represents the state or characteristics of an object.</li>
-            <li>Method: A function that is defined inside a class and can be called on objects. It represents the behavior or 
-            capabilities of an object.</li>
-            `;
+        <p>A <strong>for loop</strong> iterates over each item in a sequence such as a list, tuple, string, or range.</p><br/>
 
-            const codeExClass = `
-            <h3>The __init__ method in Python</h3>
-<p>
-  Often referred to as the initializer or constructor, is a special instance method that gets called automatically when a new instance of a class is created. Its primary role is to initialize the instance’s state by setting the attributes with the values passed to the class constructor.
-</p>
-
-<h3>Here’s a detailed explanation of the __init__ method:</h3>
-<ul>
-  <li><strong>Initialization:</strong> When you create a new object, __init__ sets up the initial state of the object by assigning the values of the object’s properties. This is where you will typically see attributes (variables associated with the object) being set.</li>
-  <li><strong>Self Parameter:</strong> The first parameter of the __init__ method is always self, which represents the instance of the class. Through self, you can access the attributes and methods of the class in Python.</li>
-  <li><strong>Parameters:</strong> After self, you can add as many additional parameters as you need to pass values when creating a new object. These parameters are often used to set the initial values for the object’s attributes.</li>
-  <li><strong>Constructors:</strong> Unlike constructors in some other languages, __init__ doesn’t actually create the object; it’s merely responsible for initializing the object after it’s been created.</li>
-</ul>
-
-<h3>Here’s an example of a class with an __init__ method:</h3>
-<pre>
-<code>
-class Car:
-    def __init__(self, make, model, year):
-        self.make = make
-        self.model = model
-        self.year = year
-
-# Creating a new Car object
-my_car = Car('Tesla', 'Model S', 2020)
-</code>
-</pre>
-
-<h3>Key Points:</h3>
-<ul>
-  <li>The __init__ method is automatically invoked when a new object is created.</li>
-  <li>It’s used to assign values to the object’s attributes.</li>
-  <li>The self parameter is a reference to the current instance of the class and is used to access variables that belong to the class.</li>
-  <li>It’s important to note that while __init__ is similar to constructors in other object-oriented languages, in Python, the actual object creation is handled by the __new__ method, which is called before __init__.</li>
-</ul>
-
-            `;
-            
-                        
-          
-
-            titleEx.innerHTML = "Class"
-            textContainer.innerHTML = textClass;
-            scriptContainer.innerHTML = codeExClass;
-            break;
-
-
-        case 'date':
-            textDate = `
-            from datetime import datetime
-
-            <li>Get the current date and time
-            current_date_time = datetime.now()
-            print("Current date and time:", current_date_time)</li>
-
-            <li>Create a specific date
-            specific_date = datetime(2020, 5, 17)
-            print("Specific date:", specific_date)</li>
-
-            <li>Format the date
-            formatted_date = current_date_time.strftime("%B %d, %Y")
-            print("Formatted date:", formatted_date)</li>
-            `;
-
-            codeExDate = `
-<pre>from datetime import datetime
-
-# Get the current date and time
-current_date_time = datetime.now()
-print("Current date and time:", current_date_time)
-
-# Create a specific date
-specific_date = datetime(2020, 5, 17)
-print("Specific date:", specific_date)
-
-# Format the date
-formatted_date = current_date_time.strftime("%B %d, %Y")
-print("Formatted date:", formatted_date)
-</pre>
-            `;
-
-            titleEx.innerHTML = "getElementBy-- querySelector--"
-            textContainer.innerHTML = textDate;
-            scriptContainer.innerHTML = codeExDate;
-            break;
-
-        case 'forLoops':
-            const textForLoop = `
-            <h3>The for loop repeats a block of code until a specified condition evaluates to false.</h3>
-            <p>A for loop in Python is used to iterate over a sequence, such as a list, tuple, dictionary, 
-            set, or string. This type of loop is known as definite iteration because it executes a predetermined 
-            number of times, corresponding to the number of elements in the sequence.</p><br/>
-<pre>
+        <pre><code>
 for item in sequence:
-    # code to execute for each item
-</pre><br/>
-            `;
+    # code runs for each item
+        </code></pre><br/>
 
-            const codeExForLoop = `
+        <h3>Common Uses</h3><br/>
+        <ul>
+            <li>Loop through lists</li>
+            <li>Loop through strings</li>
+            <li>Loop using <code>range()</code></li>
+        </ul><br/>
+    `;
 
-
-<pre>
+    const codeExForLoop = `
+<pre><code>
 fruits = ["apple", "banana", "cherry"]
+
 for fruit in fruits:
     print(fruit)
-</pre> `;
 
-            titleEx.innerHTML = "for Loops"
-            textContainer.innerHTML = textForLoop;
-            scriptContainer.innerHTML = codeExForLoop;
-            break;
+# Using range()
+for i in range(5):
+    print(i)
+</code></pre>
+    `;
 
-        case 'whileLoops':
-                const textWhileLoop = `
-                <p>In Python, a while loop is used for indefinite iteration, which means it will continue to 
-                execute as long as a specified condition is True. Here’s the basic structure of a while loop:</p>
-
-                <p>The condition is a Boolean expression that is evaluated before each iteration of the loop. 
-                If the condition is True, the code block within the loop is executed. After the block is executed, 
-                the condition is evaluated again, and this process repeats until the condition becomes False</p><br/>
-                <li>Ensure the condition eventually becomes False to avoid an infinite loop.</li>
-                <li>The condition is checked before the code block is executed, so if the condition is False initially, the code block will not run at all.</li>
-                <li>You can use break to exit the loop prematurely, and continue to skip to the next iteration without finishing the current one.</li>
-                <li>An else clause can be added to run a block of code once after the loop ends naturally (i.e., the condition becomes False), but it will 
-                not execute if the loop is terminated with a break statement.</li>
-
-                `;
+    titleEx.innerHTML = "For Loops";
+    textContainer.innerHTML = textForLoop;
+    scriptContainer.innerHTML = codeExForLoop;
+    break;
 
 
-                const codeWhileLoop = `
-<pre>
+case 'whileLoops':
+    const textWhileLoop = `
+        <h3>Python While Loops</h3><br/>
+
+        <p>A <strong>while loop</strong> repeats as long as its condition remains True.</p><br/>
+
+        <pre><code>
+while condition:
+    # code runs repeatedly
+        </code></pre><br/>
+
+        <h3>Important Notes</h3><br/>
+        <ul>
+            <li>Make sure the condition eventually becomes False.</li>
+            <li>Use <code>break</code> to exit early.</li>
+            <li>Use <code>continue</code> to skip to the next iteration.</li>
+        </ul><br/>
+    `;
+
+    const codeWhileLoop = `
+<pre><code>
 counter = 0
-while counter < 5:
-    print("Counter is at:", counter)
-    counter += 1 
-</pre>`;
-                
-                titleEx.innerHTML = "while Loops"
-                textContainer.innerHTML = textWhileLoop;
-                scriptContainer.innerHTML = codeWhileLoop ;
-                break;
 
+while counter < 5:
+    print("Counter:", counter)
+    counter += 1
+
+# Using break
+i = 0
+while True:
+    if i == 3:
+        break
+    print(i)
+    i += 1
+</code></pre>
+    `;
+
+    titleEx.innerHTML = "While Loops";
+    textContainer.innerHTML = textWhileLoop;
+    scriptContainer.innerHTML = codeWhileLoop;
+    break;
+
+
+
+case 'function':
+    const textFunction = `
+        <h3>Python Functions</h3><br/>
+
+        <p>A function is a reusable block of code that performs a specific task.  
+        Functions help keep your code organized, readable, and efficient.</p><br/>
+
+        <h3>Defining a Function</h3><br/>
+        <pre><code>
+def greet(name):
+    print("Hello,", name)
+        </code></pre><br/>
+
+        <h3>Returning Values</h3><br/>
+        <pre><code>
+def add(a, b):
+    return a + b
+        </code></pre><br/>
+
+        <h3>Parameters vs Arguments</h3><br/>
+        <ul>
+            <li><strong>Parameters</strong> are the variable names in the function definition.</li>
+            <li><strong>Arguments</strong> are the actual values you pass when calling the function.</li>
+        </ul><br/>
+
+        <h3>Default Parameters</h3><br/>
+        <pre><code>
+def greet(name="Guest"):
+    print("Hello,", name)
+        </code></pre><br/>
+
+        <h3>*args and **kwargs</h3><br/>
+        <p>Used when you don’t know how many arguments will be passed.</p><br/>
+
+        <pre><code>
+def show_args(*args):
+    print(args)
+
+def show_kwargs(**kwargs):
+    print(kwargs)
+        </code></pre><br/>
+
+        <h3>Lambda (Anonymous) Functions</h3><br/>
+        <pre><code>
+square = lambda x: x * x
+        </code></pre><br/>
+    `;
+
+    const codeExFunction = `
+<pre><code>
+def multiply(a, b):
+    return a * b
+
+result = multiply(4, 5)
+print(result)
+</code></pre>
+    `;
+
+    titleEx.innerHTML = "Functions";
+    textContainer.innerHTML = textFunction;
+    scriptContainer.innerHTML = codeExFunction;
+    break;
+
+
+ case 'objects':
+    const textObjects = `
+        <h3>Python Objects</h3><br/>
+
+        <p>Everything in Python is an <strong>object</strong>.  
+        Numbers, strings, lists, functions — all of them are objects with properties and behaviors.</p><br/>
+
+        <p>Objects are created from <strong>classes</strong>, which act as blueprints.  
+        A class defines what an object is and what it can do.</p><br/>
+
+        <h3>Key Ideas</h3><br/>
+        <ul>
+            <li><strong>Object</strong> — a specific instance created from a class.</li>
+            <li><strong>Attributes</strong> — data stored inside an object.</li>
+            <li><strong>Methods</strong> — functions that belong to an object.</li>
+            <li><strong>Class</strong> — a blueprint that defines attributes and methods.</li>
+        </ul><br/>
+
+        <p>Understanding objects is the foundation for learning classes, which is the next step.</p><br/>
+
+        <h3>Example: Built‑in Objects</h3><br/>
+        <pre><code>
+name = "Alice"
+print(name.upper())   # upper() is a method of string objects
+        </code></pre><br/>
+
+        <p>Now that you understand what an object is, you’re ready to learn how to create your own using classes.</p><br/>
+    `;
+
+    const codeExObjects = `
+<pre><code>
+x = 42
+print(x.bit_length())   # method of int objects
+</code></pre>
+    `;
+
+    titleEx.innerHTML = "Objects";
+    textContainer.innerHTML = textObjects;
+    scriptContainer.innerHTML = codeExObjects;
+    break;
+
+
+case 'class':
+    const textClass = `
+        <h3>Python Classes</h3><br/>
+
+        <p>A class is a blueprint for creating objects.  
+        It defines the attributes (data) and methods (behavior) that the objects will have.</p><br/>
+
+        <h3>Key Terms</h3><br/>
+        <ul>
+            <li><strong>Class</strong> — the blueprint.</li>
+            <li><strong>Object / Instance</strong> — a specific example created from the class.</li>
+            <li><strong>Attribute</strong> — a variable that belongs to an object.</li>
+            <li><strong>Method</strong> — a function defined inside a class.</li>
+        </ul><br/>
+
+        <h3>The __init__ Method</h3><br/>
+        <p><code>__init__</code> runs automatically when you create a new object.  
+        It initializes the object’s attributes.</p><br/>
+
+        <h3>Example Class with Attributes and Methods</h3><br/>
+
+        <pre><code>
+class Dog:
+    def __init__(self, name, age):
+        self.name = name      # attribute
+        self.age = age        # attribute
+
+    def speak(self):
+        return f"{self.name} says woof!"
+        </code></pre><br/>
+
+        <p>Creating an object:</p><br/>
+
+        <pre><code>
+my_dog = Dog("Buddy", 3)
+print(my_dog.speak())
+        </code></pre><br/>
+
+        <p>This example shows how classes let you bundle data and behavior together.</p><br/>
+    `;
+
+    const codeExClass = `
+<pre><code>
+class Car:
+    def __init__(self, make, model):
+        self.make = make
+        self.model = model
+
+    def full_name(self):
+        return f"{self.make} {self.model}"
+
+my_car = Car("Tesla", "Model 3")
+print(my_car.full_name())
+</code></pre>
+    `;
+
+    titleEx.innerHTML = "Classes";
+    textContainer.innerHTML = textClass;
+    scriptContainer.innerHTML = codeExClass;
+    break;
+
+
+case 'date':
+    const textDate = `
+        <h3>Date & Time in Python</h3><br/>
+
+        <p>Python provides the <code>datetime</code> module for working with dates and times.</p><br/>
+
+        <h3>Importing datetime</h3>
+        <pre><code>
+from datetime import datetime
+        </code></pre><br/>
+
+        <h3>Get the Current Date & Time</h3>
+        <pre><code>
+now = datetime.now()
+print(now)
+        </code></pre><br/>
+
+        <h3>Create a Specific Date</h3>
+        <pre><code>
+birthday = datetime(1995, 7, 12)
+print(birthday)
+        </code></pre><br/>
+
+        <h3>Formatting Dates</h3>
+        <p>Use <code>strftime()</code> to format dates into readable strings.</p><br/>
+
+        <pre><code>
+formatted = now.strftime("%B %d, %Y")
+print(formatted)   # Example: "February 04, 2026"
+        </code></pre><br/>
+    `;
+
+    const codeExDate = `
+<pre><code>
+from datetime import datetime
+
+now = datetime.now()
+print("Now:", now)
+
+specific = datetime(2020, 5, 17)
+print("Specific:", specific)
+
+print(now.strftime("%A, %B %d"))
+</code></pre>
+    `;
+
+    titleEx.innerHTML = "Date Object";
+    textContainer.innerHTML = textDate;
+    scriptContainer.innerHTML = codeExDate;
+    break;
+
+
+case 'listComprehension':
+    const textListComp = `
+        <h3>List Comprehension</h3><br/>
+
+        <p>List comprehension is a concise way to create lists.  
+        It replaces a multi‑line <code>for</code> loop with a single readable expression.</p><br/>
+
+        <h3>Traditional Loop → List Comprehension</h3><br/>
+
+        <strong>Normal loop:</strong>
+        <pre><code>
+numbers = []
+for i in range(5):
+    numbers.append(i * 2)
+        </code></pre><br/>
+
+        <strong>List comprehension:</strong>
+        <pre><code>
+numbers = [i * 2 for i in range(5)]
+        </code></pre><br/>
+
+        <h3>With Conditions</h3>
+        <pre><code>
+evens = [n for n in range(20) if n % 2 == 0]
+        </code></pre><br/>
+
+        <h3>Transforming Strings</h3>
+        <pre><code>
+words = ["apple", "banana", "cherry"]
+upper_words = [w.upper() for w in words]
+        </code></pre><br/>
+    `;
+
+    const codeExListComp = `
+<pre><code>
+nums = [i for i in range(10)]
+squares = [x*x for x in nums]
+evens = [n for n in nums if n % 2 == 0]
+
+print(nums)
+print(squares)
+print(evens)
+</code></pre>
+    `;
+
+    titleEx.innerHTML = "List Comprehension";
+    textContainer.innerHTML = textListComp;
+    scriptContainer.innerHTML = codeExListComp;
+    break;
+
+
+case 'dictionaries':
+    const textDict = `
+        <h3>Dictionaries</h3><br/>
+
+        <p>A dictionary stores data as <strong>key–value</strong> pairs.</p><br/>
+
+        <pre><code>
+person = {
+    "name": "Alice",
+    "age": 25
+}
+        </code></pre><br/>
+
+        <h3>Accessing Values</h3>
+        <pre><code>
+print(person["name"])
+print(person.get("age"))
+        </code></pre><br/>
+
+        <h3>Adding / Updating</h3>
+        <pre><code>
+person["city"] = "New York"
+person["age"] = 26
+        </code></pre><br/>
+
+        <h3>Looping Through a Dictionary</h3>
+        <pre><code>
+for key, value in person.items():
+    print(key, value)
+        </code></pre><br/>
+
+        <h3>Dictionary Comprehension</h3>
+        <p>Just like list comprehension, but creates a dictionary.</p><br/>
+
+        <strong>Example: Square numbers</strong>
+        <pre><code>
+squares = {n: n*n for n in range(5)}
+        </code></pre><br/>
+
+        <strong>Filtering with comprehension</strong>
+        <pre><code>
+even_squares = {n: n*n for n in range(10) if n % 2 == 0}
+        </code></pre><br/>
+    `;
+
+    const codeExDict = `
+<pre><code>
+person = {"name": "Sam", "age": 30}
+
+for k, v in person.items():
+    print(k, v)
+
+squares = {n: n*n for n in range(6)}
+print(squares)
+</code></pre>
+    `;
+
+    titleEx.innerHTML = "Dictionaries";
+    textContainer.innerHTML = textDict;
+    scriptContainer.innerHTML = codeExDict;
+    break;
+
+
+case 'fileHandling':
+    const textFile = `
+        <h3>File Handling in Python</h3><br/>
+
+        <p>Python uses the <code>open()</code> function to work with files.</p><br/>
+
+        <h3>Opening a File</h3>
+        <pre><code>
+file = open("data.txt", "r")   # r = read
+content = file.read()
+file.close()
+        </code></pre><br/>
+
+        <h3>Using "with" (recommended)</h3>
+        <p>Automatically closes the file for you.</p><br/>
+
+        <pre><code>
+with open("data.txt", "r") as f:
+    content = f.read()
+        </code></pre><br/>
+
+        <h3>Writing to a File</h3>
+        <pre><code>
+with open("output.txt", "w") as f:
+    f.write("Hello World")
+        </code></pre><br/>
+
+        <h3>Appending</h3>
+        <pre><code>
+with open("log.txt", "a") as f:
+    f.write("New entry\\n")
+        </code></pre><br/>
+    `;
+
+    const codeExFile = `
+<pre><code>
+with open("example.txt", "w") as f:
+    f.write("Line 1")
+
+with open("example.txt", "r") as f:
+    print(f.read())
+</code></pre>
+    `;
+
+    titleEx.innerHTML = "File Handling";
+    textContainer.innerHTML = textFile;
+    scriptContainer.innerHTML = codeExFile;
+    break;
+
+
+case 'exceptions':
+    const textExceptions = `
+        <h3>Exceptions</h3><br/>
+
+        <p>Exceptions occur when something goes wrong in your program.  
+        Use <code>try</code> and <code>except</code> to handle errors safely.</p><br/>
+
+        <h3>Basic Example</h3>
+        <pre><code>
+try:
+    x = 10 / 0
+except ZeroDivisionError:
+    print("You cannot divide by zero!")
+        </code></pre><br/>
+
+        <h3>Multiple Exceptions</h3>
+        <pre><code>
+try:
+    num = int("abc")
+except ValueError:
+    print("Not a number")
+except Exception as e:
+    print("Other error:", e)
+        </code></pre><br/>
+
+        <h3>Finally Block</h3>
+        <p>Runs no matter what.</p><br/>
+
+        <pre><code>
+try:
+    f = open("data.txt")
+except FileNotFoundError:
+    print("File missing")
+finally:
+    print("Done")
+        </code></pre><br/>
+    `;
+
+    const codeExExceptions = `
+<pre><code>
+try:
+    value = int("42a")
+except ValueError:
+    print("Conversion failed")
+</code></pre>
+    `;
+
+    titleEx.innerHTML = "Exceptions";
+    textContainer.innerHTML = textExceptions;
+    scriptContainer.innerHTML = codeExExceptions;
+    break;
+
+
+case 'virtualEnv':
+    const textVirtualEnv = `
+        <h3>Python Virtual Environments</h3><br/>
+
+        <p>A virtual environment is an isolated Python workspace.  
+        It keeps your project’s packages separate from your system Python installation.</p><br/>
+
+        <h3>Why Use a Virtual Environment?</h3><br/>
+        <ul>
+            <li>Different projects can use different package versions.</li>
+            <li>Prevents conflicts with system‑wide Python packages.</li>
+            <li>Makes projects portable and easier to manage.</li>
+        </ul><br/>
+
+        <h3>Create a Virtual Environment</h3><br/>
+
+        <strong>Windows:</strong>
+        <pre><code>
+python -m venv myenv
+        </code></pre><br/>
+
+        <strong>Linux / macOS:</strong>
+        <pre><code>
+python3 -m venv myenv
+        </code></pre><br/>
+
+        <h3>Activate the Environment</h3><br/>
+
+        <strong>Windows:</strong>
+        <pre><code>
+myenv\\Scripts\\activate
+        </code></pre><br/>
+
+        <strong>Linux / macOS:</strong>
+        <pre><code>
+source myenv/bin/activate
+        </code></pre><br/>
+
+        <h3>Deactivate the Environment</h3>
+        <pre><code>
+deactivate
+        </code></pre><br/>
+
+        <h3>Install Packages Inside the Environment</h3>
+        <pre><code>
+pip install requests
+        </code></pre><br/>
+
+        <p>Virtual environments are essential for clean, organized Python development.</p><br/>
+    `;
+
+    const codeExVirtualEnv = `
+<pre><code>
+# Create
+python -m venv env
+
+# Activate (Windows)
+env\\Scripts\\activate
+
+# Activate (Linux)
+source env/bin/activate
+
+# Install packages
+pip install flask
+</code></pre>
+    `;
+
+    titleEx.innerHTML = "Virtual Environments";
+    textContainer.innerHTML = textVirtualEnv;
+    scriptContainer.innerHTML = codeExVirtualEnv;
+    break;
+
+
+case 'decorators':
+    const textDecorators = `
+        <h3>Python Decorators</h3><br/>
+
+        <p>A decorator is a function that takes another function and adds extra behavior  
+        without modifying the original function’s code.</p><br/>
+
+        <h3>Why Use Decorators?</h3><br/>
+        <ul>
+            <li>Logging</li>
+            <li>Authentication</li>
+            <li>Timing function execution</li>
+            <li>Reusable wrappers around functions</li>
+        </ul><br/>
+
+        <h3>Basic Decorator Structure</h3>
+        <pre><code>
+def my_decorator(func):
+    def wrapper():
+        print("Before function runs")
+        func()
+        print("After function runs")
+    return wrapper
+        </code></pre><br/>
+
+        <h3>Applying a Decorator</h3>
+        <pre><code>
+@my_decorator
+def greet():
+    print("Hello!")
+
+greet()
+        </code></pre><br/>
+
+        <h3>Decorator with Arguments</h3>
+        <pre><code>
+def repeat(times):
+    def decorator(func):
+        def wrapper():
+            for _ in range(times):
+                func()
+        return wrapper
+    return decorator
+
+@repeat(3)
+def say_hi():
+    print("Hi!")
+        </code></pre><br/>
+
+        <p>Decorators are a powerful tool for writing clean, reusable, and expressive Python code.</p><br/>
+    `;
+
+    const codeExDecorators = `
+<pre><code>
+def log(func):
+    def wrapper():
+        print("Calling:", func.__name__)
+        func()
+    return wrapper
+
+@log
+def hello():
+    print("Hello world")
+
+hello()
+</code></pre>
+    `;
+
+    titleEx.innerHTML = "Decorators";
+    textContainer.innerHTML = textDecorators;
+    scriptContainer.innerHTML = codeExDecorators;
+    break;
+
+
+ 
     }
 }
 
